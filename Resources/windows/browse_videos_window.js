@@ -78,6 +78,26 @@ khan_academy.browse_videos_window = function() {
 			'height': 40,
 			'top' : 20
 		});
+		download_button.addEventListener( 'click', function() {
+			
+			// Set badge
+			var download_tab = my_app.main_window.get_tabgroup().tabs[2];
+			if ( null == download_tab.badge ) {
+				download_tab.setBadge( 1 );
+			}
+			else {
+				download_tab.setBadge( download_tab.badge + 1 );
+			}
+			
+			// Set download window
+			var dlv = new download_video( video );
+			dlv.init();
+			
+			var tableview = my_app.download_window.get_tableview();
+			tableview.appendRow(dlv.get_row());
+			
+			video_option.close();
+		});
 
 		// Watch the movie
 		var watch_button = Titanium.UI.createButton({

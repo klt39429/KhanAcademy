@@ -1,12 +1,16 @@
 khan_academy.download_window = function() {
 
 	var _window = '';
+	var _tableview = '';
 
 	var _init = function() {
 		_window = '';
 		_window = Titanium.UI.createWindow({
 			title : 'Downloads'
 		});
+		
+		_tableview = Titanium.UI.createTableView();
+		_window.add(_tableview);
 	};
 	
 	
@@ -17,6 +21,9 @@ khan_academy.download_window = function() {
 		},
 		get_window : function() {
 			return _window;
+		},
+		get_tableview : function() {
+			return _tableview;
 		}
 	};
 };
