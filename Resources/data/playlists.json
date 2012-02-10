@@ -1,0 +1,745 @@
+[
+    {
+        "description": "Topics covered from very basic algebra all the way through algebra II.  This is the best algebra playlist to start at if you've never seen algebra before.  Once you get your feet wet, you may want to try some of the videos in the \"Algebra I Worked Examples\" playlist.", 
+        "hide": false, 
+        "id": "core-algebra", 
+        "ka_url": "http://www.khanacademy.org#core-algebra", 
+        "kind": "Topic", 
+        "relative_url": "#core-algebra", 
+        "standalone_title": "Algebra", 
+        "tags": [
+            "math", 
+            "algebra", 
+            "khan"
+        ], 
+        "title": "Core Algebra"
+    }, 
+    {
+        "description": "180 Worked Algebra I examples (problems written by the Monterey Institute of Technology and Education).  You should look at the \"Algebra\" playlist if you've never seen algebra before or if you want instruction on topics in Algebra II.  Use this playlist to see a ton of example problems in every topic in the California Algebra I Standards.  If you can do all of these problems on your own, you should probably test out of Algebra I (seriously).", 
+        "hide": false, 
+        "id": "algebra-worked-examples-4", 
+        "ka_url": "http://www.khanacademy.org#algebra-worked-examples-4", 
+        "kind": "Topic", 
+        "relative_url": "#algebra-worked-examples-4", 
+        "standalone_title": "Algebra I Worked Examples", 
+        "tags": [], 
+        "title": "Worked Examples 4"
+    }, 
+    {
+        "description": "Videos about how government works in the United States", 
+        "hide": false, 
+        "id": "american-civics", 
+        "ka_url": "http://www.khanacademy.org#american-civics", 
+        "kind": "Topic", 
+        "relative_url": "#american-civics", 
+        "standalone_title": "American Civics", 
+        "tags": [], 
+        "title": "American Civics"
+    }, 
+    {
+        "description": "The most basic of the math playlists.  Start here if you have very little background in math fundamentals (or just want to make sure you do).  After watching this playlist, you should be ready for the pre-algebra playlist.", 
+        "hide": false, 
+        "id": "arithmetic", 
+        "ka_url": "http://www.khanacademy.org#arithmetic", 
+        "kind": "Topic", 
+        "relative_url": "#arithmetic", 
+        "standalone_title": "Arithmetic", 
+        "tags": [
+            "math", 
+            "arithmetic", 
+            "khan"
+        ], 
+        "title": "Arithmetic"
+    }, 
+    {
+        "description": "Spontaneous conversations about works of art where the speakers are not afraid to disagree with each other or art history orthodoxy. Videos are made by Dr. Beth Harris and Dr. Steven Zucker along with other contributors.", 
+        "hide": false, 
+        "id": "art-history", 
+        "ka_url": "http://www.khanacademy.org#art-history", 
+        "kind": "Topic", 
+        "relative_url": "#art-history", 
+        "standalone_title": "Art History", 
+        "tags": [], 
+        "title": "Art History"
+    }, 
+    {
+        "description": "Videos on how banks work and how money is created.", 
+        "hide": false, 
+        "id": "banking-and-money", 
+        "ka_url": "http://www.khanacademy.org#banking-and-money", 
+        "kind": "Topic", 
+        "relative_url": "#banking-and-money", 
+        "standalone_title": "Banking and Money", 
+        "tags": [], 
+        "title": "Banking and Money"
+    }, 
+    {
+        "description": "Covers topics seen in a first year college or high school biology course.", 
+        "hide": false, 
+        "id": "biology", 
+        "ka_url": "http://www.khanacademy.org#biology", 
+        "kind": "Topic", 
+        "relative_url": "#biology", 
+        "standalone_title": "Biology", 
+        "tags": [], 
+        "title": "Biology"
+    }, 
+    {
+        "description": "Random logic puzzles and brain teasers.  Fun to do and useful for many job interviews!", 
+        "hide": false, 
+        "id": "brain-teasers", 
+        "ka_url": "http://www.khanacademy.org#brain-teasers", 
+        "kind": "Topic", 
+        "relative_url": "#brain-teasers", 
+        "standalone_title": "Brain Teasers", 
+        "tags": [], 
+        "title": "Brain Teasers"
+    }, 
+    {
+        "description": "Sal working through the 53 problems from the practice test available at http://www.cde.ca.gov/ta/tg/hs/documents/mathpractest.pdf for the CAHSEE (California High School Exit Examination).  Clearly useful if you're looking to take that exam.  Probably still useful if you want to make sure you have a solid understanding of basic high school math.", 
+        "hide": false, 
+        "id": "cahsee", 
+        "ka_url": "http://www.khanacademy.org#cahsee", 
+        "kind": "Topic", 
+        "relative_url": "#cahsee", 
+        "standalone_title": "CAHSEE Example Problems", 
+        "tags": [
+            "CAHSEE", 
+            "california", 
+            "high", 
+            "school", 
+            "exit", 
+            "exam"
+        ], 
+        "title": "CAHSEE"
+    }, 
+    {
+        "description": "Topics covered in the first two or three semesters of college calculus.  Everything from limits to derivatives to integrals to vector calculus. Should understand the topics in the pre-calculus playlist first (the limit videos are in both playlists)", 
+        "hide": false, 
+        "id": "calculus", 
+        "ka_url": "http://www.khanacademy.org#calculus", 
+        "kind": "Topic", 
+        "relative_url": "#calculus", 
+        "standalone_title": "Calculus", 
+        "tags": [
+            "calculus", 
+            "derivative", 
+            "integral", 
+            "math", 
+            "khan"
+        ], 
+        "title": "Calculus"
+    }, 
+    {
+        "description": "Sal works through the problems from the CA Standards released questions: http://www.cde.ca.gov/ta/tg/sr/documents/rtqalg1.pdf  .  Good videos to review Algebra I (The \"Algebra I Worked Examples\" playlist is more comprehensive and should probably be watched first).", 
+        "hide": false, 
+        "id": "algebra-worked-examples", 
+        "ka_url": "http://www.khanacademy.org#algebra-worked-examples", 
+        "kind": "Topic", 
+        "relative_url": "#algebra-worked-examples", 
+        "standalone_title": "California Standards Test: Algebra I", 
+        "tags": [], 
+        "title": "Worked Examples 1"
+    }, 
+    {
+        "description": "Sal works through the problems from the CA Standards released questions: http://www.cde.ca.gov/ta/tg/sr/documents/rtqalg1.pdf  .  Good videos to review Algebra I (The \"Algebra I Worked Examples\" playlist is more comprehensive and should probably be watched first).", 
+        "hide": false, 
+        "id": "algebra-i", 
+        "ka_url": "http://www.khanacademy.org#algebra-i", 
+        "kind": "Topic", 
+        "relative_url": "#algebra-i", 
+        "standalone_title": "California Standards Test: Algebra I", 
+        "tags": [], 
+        "title": "Algebra I"
+    }, 
+    {
+        "description": "Sal works through 80 questions taken from the California Standards Test for Algebra II.  Good place to review the major topics in Algebra II even if you're not in California.  Many of these topics are taught in more depth in the \"Algebra\" playlist.", 
+        "hide": false, 
+        "id": "algebra-worked-examples-3", 
+        "ka_url": "http://www.khanacademy.org#algebra-worked-examples-3", 
+        "kind": "Topic", 
+        "relative_url": "#algebra-worked-examples-3", 
+        "standalone_title": "California Standards Test: Algebra II", 
+        "tags": [
+            "california", 
+            "standards", 
+            "STAR", 
+            "algebra"
+        ], 
+        "title": "Worked Examples 3"
+    }, 
+    {
+        "description": "Sal does the 80 problems from the released questions from the California Standards Test for Geometry.  Test at http://www.cde.ca.gov/ta/tg/sr/documents/rtqgeom.pdf . Basic understanding of Algebra I necessary.", 
+        "hide": false, 
+        "id": "geometry-2", 
+        "ka_url": "http://www.khanacademy.org#geometry-2", 
+        "kind": "Topic", 
+        "relative_url": "#geometry-2", 
+        "standalone_title": "California Standards Test: Geometry", 
+        "tags": [], 
+        "title": "Geometry"
+    }, 
+    {
+        "description": "Sal does the 80 problems from the released questions from the California Standards Test for Geometry.  Test at http://www.cde.ca.gov/ta/tg/sr/documents/rtqgeom.pdf . Basic understanding of Algebra I necessary.", 
+        "hide": false, 
+        "id": "geometry-worked-examples", 
+        "ka_url": "http://www.khanacademy.org#geometry-worked-examples", 
+        "kind": "Topic", 
+        "relative_url": "#geometry-worked-examples", 
+        "standalone_title": "California Standards Test: Geometry", 
+        "tags": [], 
+        "title": "Worked Examples 1"
+    }, 
+    {
+        "description": "Videos on chemistry (roughly covering a first-year high school or college course).", 
+        "hide": false, 
+        "id": "chemistry", 
+        "ka_url": "http://www.khanacademy.org#chemistry", 
+        "kind": "Topic", 
+        "relative_url": "#chemistry", 
+        "standalone_title": "Chemistry", 
+        "tags": [
+            "chemistry", 
+            "science"
+        ], 
+        "title": "Chemistry"
+    }, 
+    {
+        "description": "Example problems from random math competitions", 
+        "hide": false, 
+        "id": "competition-math", 
+        "ka_url": "http://www.khanacademy.org#competition-math", 
+        "kind": "Topic", 
+        "relative_url": "#competition-math", 
+        "standalone_title": "Competition Math", 
+        "tags": [
+            "AIME", 
+            "USAMO", 
+            "mathcounts", 
+            "putnam"
+        ], 
+        "title": "Competition Math"
+    }, 
+    {
+        "description": "Introduction to programming and computer science", 
+        "hide": false, 
+        "id": "computer-science", 
+        "ka_url": "http://www.khanacademy.org#computer-science", 
+        "kind": "Topic", 
+        "relative_url": "#computer-science", 
+        "standalone_title": "Computer Science", 
+        "tags": [], 
+        "title": "Computer Science"
+    }, 
+    {
+        "description": "Videos attempting to grasp a little bit about our Universe (many of the topics associated with \"Big History\")", 
+        "hide": false, 
+        "id": "cosmology-and-astronomy", 
+        "ka_url": "http://www.khanacademy.org#cosmology-and-astronomy", 
+        "kind": "Topic", 
+        "relative_url": "#cosmology-and-astronomy", 
+        "standalone_title": "Cosmology and Astronomy", 
+        "tags": [
+            "cosmology", 
+            "astronomy"
+        ], 
+        "title": "Cosmology and Astronomy"
+    }, 
+    {
+        "description": "Videos on the causes and effects of the credit crisis/crunch.", 
+        "hide": false, 
+        "id": "credit-crisis", 
+        "ka_url": "http://www.khanacademy.org#credit-crisis", 
+        "kind": "Topic", 
+        "relative_url": "#credit-crisis", 
+        "standalone_title": "Credit Crisis", 
+        "tags": [
+            "paulson", 
+            "paulsen", 
+            "bernanke", 
+            "bailout", 
+            "credit", 
+            "crunch", 
+            "crisis", 
+            "finance", 
+            "markets", 
+            "CDO", 
+            "MBS", 
+            "CDS", 
+            "default", 
+            "swaps", 
+            "collateralized", 
+            "debt", 
+            "obligations"
+        ], 
+        "title": "Credit Crisis"
+    }, 
+    {
+        "description": "Videos about currency exchange", 
+        "hide": false, 
+        "id": "currency", 
+        "ka_url": "http://www.khanacademy.org#currency", 
+        "kind": "Topic", 
+        "relative_url": "#currency", 
+        "standalone_title": "Currency", 
+        "tags": [
+            "macroeconomics", 
+            "currency"
+        ], 
+        "title": "Currency"
+    }, 
+    {
+        "description": "Discussions of economic topics and how they relate to current events.", 
+        "hide": false, 
+        "id": "current-economics", 
+        "ka_url": "http://www.khanacademy.org#current-economics", 
+        "kind": "Topic", 
+        "relative_url": "#current-economics", 
+        "standalone_title": "Current Economics", 
+        "tags": [
+            "economics", 
+            "obama", 
+            "stimulus", 
+            "geithner", 
+            "inflation", 
+            "deflation", 
+            "unemployment"
+        ], 
+        "title": "Current Economics"
+    }, 
+    {
+        "description": "Worked developmental math examples from the Monterey Institute.  These start pretty basic and would prepare a student for the Algebra I worked examples", 
+        "hide": false, 
+        "id": "developmental-math-1", 
+        "ka_url": "http://www.khanacademy.org#developmental-math-1", 
+        "kind": "Topic", 
+        "relative_url": "#developmental-math-1", 
+        "standalone_title": "Developmental Math", 
+        "tags": [], 
+        "title": "Developmental Math 1"
+    }, 
+    {
+        "description": "Worked developmental math examples from the Monterey Institute (part 2).  These start at Algebra I and would prepare a student for basic college mathematics.", 
+        "hide": false, 
+        "id": "developmental-math-2", 
+        "ka_url": "http://www.khanacademy.org#developmental-math-2", 
+        "kind": "Topic", 
+        "relative_url": "#developmental-math-2", 
+        "standalone_title": "Developmental Math 2", 
+        "tags": [], 
+        "title": "Developmental Math 2"
+    }, 
+    {
+        "description": "More Developmental math videos", 
+        "hide": false, 
+        "id": "developmental-math-3", 
+        "ka_url": "http://www.khanacademy.org#developmental-math-3", 
+        "kind": "Topic", 
+        "relative_url": "#developmental-math-3", 
+        "standalone_title": "Developmental Math 3", 
+        "tags": [], 
+        "title": "Developmental Math 3"
+    }, 
+    {
+        "description": "Topics covered in a first year course in differential equations.  Need to understand basic differentiation and integration from Calculus playlist before starting here.", 
+        "hide": false, 
+        "id": "differential-equations", 
+        "ka_url": "http://www.khanacademy.org#differential-equations", 
+        "kind": "Topic", 
+        "relative_url": "#differential-equations", 
+        "standalone_title": "Differential Equations", 
+        "tags": [], 
+        "title": "Differential Equations"
+    }, 
+    {
+        "description": "Videos on finance and macroeconomics", 
+        "hide": false, 
+        "id": "core-finance", 
+        "ka_url": "http://www.khanacademy.org#core-finance", 
+        "kind": "Topic", 
+        "relative_url": "#core-finance", 
+        "standalone_title": "Finance", 
+        "tags": [
+            "finance", 
+            "economics", 
+            "khan"
+        ], 
+        "title": "Core Finance"
+    }, 
+    {
+        "description": "Sal works through 155 data sufficiency problems in the GMAC GMAT Review book (so using real GMAT problems).  Buy the book, then watch the videos.", 
+        "hide": false, 
+        "id": "data-sufficiency", 
+        "ka_url": "http://www.khanacademy.org#data-sufficiency", 
+        "kind": "Topic", 
+        "relative_url": "#data-sufficiency", 
+        "standalone_title": "GMAT Data Sufficiency", 
+        "tags": [
+            "gmat", 
+            "business", 
+            "school", 
+            "math", 
+            "data", 
+            "sufficiency"
+        ], 
+        "title": "Data Sufficiency"
+    }, 
+    {
+        "description": "Sal works through tbe 249 problem solving (math) questions in the official GMAC GMAT book.", 
+        "hide": false, 
+        "id": "problem-solving", 
+        "ka_url": "http://www.khanacademy.org#problem-solving", 
+        "kind": "Topic", 
+        "relative_url": "#problem-solving", 
+        "standalone_title": "GMAT: Problem Solving", 
+        "tags": [
+            "GMAT", 
+            "math", 
+            "problem", 
+            "solving"
+        ], 
+        "title": "Problem Solving"
+    }, 
+    {
+        "description": "Videos on the Geithner Plan to solve the banking crisis.", 
+        "hide": false, 
+        "id": "geithner-plan", 
+        "ka_url": "http://www.khanacademy.org#geithner-plan", 
+        "kind": "Topic", 
+        "relative_url": "#geithner-plan", 
+        "standalone_title": "Geithner Plan", 
+        "tags": [
+            "geithner", 
+            "geitner", 
+            "obama", 
+            "plan", 
+            "bailout", 
+            "banking", 
+            "financial", 
+            "crisis"
+        ], 
+        "title": "Geithner Plan"
+    }, 
+    {
+        "description": "Videos on geometry.  Basic understanding of Algebra I necessary.  After this, you'll be ready for Trigonometry.", 
+        "hide": false, 
+        "id": "core-geometry", 
+        "ka_url": "http://www.khanacademy.org#core-geometry", 
+        "kind": "Topic", 
+        "relative_url": "#core-geometry", 
+        "standalone_title": "Geometry", 
+        "tags": [
+            "geometry", 
+            "math", 
+            "khan"
+        ], 
+        "title": "Core Geometry"
+    }, 
+    {
+        "description": "Videos about medicine and the healthcare system", 
+        "hide": false, 
+        "id": "healthcare-and-medicine", 
+        "ka_url": "http://www.khanacademy.org#healthcare-and-medicine", 
+        "kind": "Topic", 
+        "relative_url": "#healthcare-and-medicine", 
+        "standalone_title": "Healthcare and Medicine", 
+        "tags": [], 
+        "title": "Healthcare and Medicine"
+    }, 
+    {
+        "description": "The history of the world (eventually)!", 
+        "hide": false, 
+        "id": "history", 
+        "ka_url": "http://www.khanacademy.org#history", 
+        "kind": "Topic", 
+        "relative_url": "#history", 
+        "standalone_title": "History", 
+        "tags": [], 
+        "title": "History"
+    }, 
+    {
+        "description": "Questions from previous IIT JEEs", 
+        "hide": false, 
+        "id": "iit-jee", 
+        "ka_url": "http://www.khanacademy.org#iit-jee", 
+        "kind": "Topic", 
+        "relative_url": "#iit-jee", 
+        "standalone_title": "IIT JEE Questions", 
+        "tags": [
+            "IIT", 
+            "JEE"
+        ], 
+        "title": "IIT JEE"
+    }, 
+    {
+        "description": "Collection of interviews with and presentations by Salman Khan.  Also a few other mentions of Khan Academy at other talks.", 
+        "hide": false, 
+        "id": "talks-and-interviews", 
+        "ka_url": "http://www.khanacademy.org#talks-and-interviews", 
+        "kind": "Topic", 
+        "relative_url": "#talks-and-interviews", 
+        "standalone_title": "Khan Academy-Related Talks and Interviews", 
+        "tags": [], 
+        "title": "Talks and Interviews"
+    }, 
+    {
+        "description": "Matrices, vectors, vector spaces, transformations.  Covers all topics in a first year college linear algebra course.  This is an advanced course normally taken by science or engineering majors after taking at least two semesters of calculus (although calculus really isn't a prereq) so don't confuse this with regular high school algebra.", 
+        "hide": false, 
+        "id": "linear-algebra", 
+        "ka_url": "http://www.khanacademy.org#linear-algebra", 
+        "kind": "Topic", 
+        "relative_url": "#linear-algebra", 
+        "standalone_title": "Linear Algebra", 
+        "tags": [
+            "linear", 
+            "algebra", 
+            "matrices", 
+            "vectors", 
+            "matrix"
+        ], 
+        "title": "Linear Algebra"
+    }, 
+    {
+        "description": "Massachusetts Tests for Education Licensure (MTEL) General Curriculum (03) Practice Test explained by Sal.  Good problems for deep understanding of pre-algebra concepts.", 
+        "hide": false, 
+        "id": "pre-algebra-worked-examples", 
+        "ka_url": "http://www.khanacademy.org#pre-algebra-worked-examples", 
+        "kind": "Topic", 
+        "relative_url": "#pre-algebra-worked-examples", 
+        "standalone_title": "MA Tests for Education Licensure (MTEL) -Pre-Alg", 
+        "tags": [
+            "MA", 
+            "licensure", 
+            "education", 
+            "massachusetts"
+        ], 
+        "title": "Worked Examples 1"
+    }, 
+    {
+        "description": "Topics covered in an traditional college level introductory microeconomics course", 
+        "hide": false, 
+        "id": "microeconomics", 
+        "ka_url": "http://www.khanacademy.org#microeconomics", 
+        "kind": "Topic", 
+        "relative_url": "#microeconomics", 
+        "standalone_title": "Microeconomics", 
+        "tags": [], 
+        "title": "Microeconomics"
+    }, 
+    {
+        "description": null, 
+        "hide": false, 
+        "id": "new-and-noteworthy", 
+        "ka_url": "http://www.khanacademy.org#new-and-noteworthy", 
+        "kind": "Topic", 
+        "relative_url": "#new-and-noteworthy", 
+        "standalone_title": "New and Noteworthy", 
+        "tags": [], 
+        "title": "New and Noteworthy"
+    }, 
+    {
+        "description": "Topics covered in college organic chemistry course.  Basic understanding of basic high school or college chemistry assumed", 
+        "hide": false, 
+        "id": "organic-chemistry", 
+        "ka_url": "http://www.khanacademy.org#organic-chemistry", 
+        "kind": "Topic", 
+        "relative_url": "#organic-chemistry", 
+        "standalone_title": "Organic Chemistry", 
+        "tags": [], 
+        "title": "Organic Chemistry"
+    }, 
+    {
+        "description": "Videos to help understand the bailout.", 
+        "hide": false, 
+        "id": "paulson-bailout", 
+        "ka_url": "http://www.khanacademy.org#paulson-bailout", 
+        "kind": "Topic", 
+        "relative_url": "#paulson-bailout", 
+        "standalone_title": "Paulson Bailout", 
+        "tags": [], 
+        "title": "Paulson Bailout"
+    }, 
+    {
+        "description": "Projectile motion, mechanics and electricity and magnetism.  Solid understanding of algebra and a basic understanding of trigonometry necessary.", 
+        "hide": false, 
+        "id": "physics", 
+        "ka_url": "http://www.khanacademy.org#physics", 
+        "kind": "Topic", 
+        "relative_url": "#physics", 
+        "standalone_title": "Physics", 
+        "tags": [
+            "physics", 
+            "mechanics", 
+            "projectile", 
+            "motion", 
+            "khan"
+        ], 
+        "title": "Physics"
+    }, 
+    {
+        "description": "Videos on pre-algebra.  Should be ready for the \"Algebra\" playlist if you understand everything here.", 
+        "hide": false, 
+        "id": "core-pre-algebra", 
+        "ka_url": "http://www.khanacademy.org#core-pre-algebra", 
+        "kind": "Topic", 
+        "relative_url": "#core-pre-algebra", 
+        "standalone_title": "Pre-algebra", 
+        "tags": [
+            "prealgebra", 
+            "pre-algebra", 
+            "algebra", 
+            "math"
+        ], 
+        "title": "Core Pre-Algebra"
+    }, 
+    {
+        "description": "Non-trigonometry pre-calculus topics.  Solid understanding of all of the topics in the \"Algebra\" playlist should make this playlist pretty digestible.", 
+        "hide": false, 
+        "id": "precalculus", 
+        "ka_url": "http://www.khanacademy.org#precalculus", 
+        "kind": "Topic", 
+        "relative_url": "#precalculus", 
+        "standalone_title": "Precalculus", 
+        "tags": [
+            "calculus", 
+            "limits", 
+            "math", 
+            "algebra", 
+            "khan"
+        ], 
+        "title": "Precalculus"
+    }, 
+    {
+        "description": "Basic probability.  Should have a reasonable grounding in basic algebra before watching.", 
+        "hide": false, 
+        "id": "probability", 
+        "ka_url": "http://www.khanacademy.org#probability", 
+        "kind": "Topic", 
+        "relative_url": "#probability", 
+        "standalone_title": "Probability", 
+        "tags": [
+            "probability"
+        ], 
+        "title": "Probability"
+    }, 
+    {
+        "description": "I am going to work through every problem in the College Board \"Official SAT Study Guide.\"  You should take the practice tests on your own, grade them and then use these videos to understand the problems you didn't get or review.  Have fun!", 
+        "hide": false, 
+        "id": "sat-math", 
+        "ka_url": "http://www.khanacademy.org#sat-math", 
+        "kind": "Topic", 
+        "relative_url": "#sat-math", 
+        "standalone_title": "SAT Preparation", 
+        "tags": [
+            "SAT", 
+            "prep", 
+            "math"
+        ], 
+        "title": "SAT Math"
+    }, 
+    {
+        "description": "We will (eventually)do all of the lectures in the Singapore Math curriculum (which we like).  You can follow along through the workbooks available at singaporemath.com", 
+        "hide": false, 
+        "id": "singapore-math", 
+        "ka_url": "http://www.khanacademy.org#singapore-math", 
+        "kind": "Topic", 
+        "relative_url": "#singapore-math", 
+        "standalone_title": "Singapore Math", 
+        "tags": [
+            "singapore", 
+            "math", 
+            "lectures"
+        ], 
+        "title": "Singapore Math"
+    }, 
+    {
+        "description": "Introduction to statistics.  Will eventually cover all of the major topics in a first-year statistics course (not there yet!)", 
+        "hide": false, 
+        "id": "statistics", 
+        "ka_url": "http://www.khanacademy.org#statistics", 
+        "kind": "Topic", 
+        "relative_url": "#statistics", 
+        "standalone_title": "Statistics", 
+        "tags": [], 
+        "title": "Statistics"
+    }, 
+    {
+        "description": "Videos on trigonometry.  Watch the \"Geometry\" playlist first if you have trouble understanding the topics covered here.", 
+        "hide": false, 
+        "id": "trigonometry", 
+        "ka_url": "http://www.khanacademy.org#trigonometry", 
+        "kind": "Topic", 
+        "relative_url": "#trigonometry", 
+        "standalone_title": "Trigonometry", 
+        "tags": [
+            "Trigonometry", 
+            "trig", 
+            "identities", 
+            "sin", 
+            "cos", 
+            "tan", 
+            "math"
+        ], 
+        "title": "Trigonometry"
+    }, 
+    {
+        "description": "Building blocks and case studies on the financial analysis and valuation of public equities.", 
+        "hide": false, 
+        "id": "valuation-and-investing", 
+        "ka_url": "http://www.khanacademy.org#valuation-and-investing", 
+        "kind": "Topic", 
+        "relative_url": "#valuation-and-investing", 
+        "standalone_title": "Valuation and Investing", 
+        "tags": [
+            "stock", 
+            "finance", 
+            "valuation", 
+            "price", 
+            "to", 
+            "earnings", 
+            "p/e", 
+            "ratio", 
+            "income", 
+            "statement", 
+            "balance", 
+            "sheet"
+        ], 
+        "title": "Valuation and Investing"
+    }, 
+    {
+        "description": "All of the sources of funding (capital) for a business.", 
+        "hide": false, 
+        "id": "venture-capital-and-capital-markets", 
+        "ka_url": "http://www.khanacademy.org#venture-capital-and-capital-markets", 
+        "kind": "Topic", 
+        "relative_url": "#venture-capital-and-capital-markets", 
+        "standalone_title": "Venture Capital and Capital Markets", 
+        "tags": [], 
+        "title": "Venture Capital and Capital Markets"
+    }, 
+    {
+        "description": "Recreational mathematics and inspirational videos by resident mathemusician Vi Hart", 
+        "hide": false, 
+        "id": "vi-hart", 
+        "ka_url": "http://www.khanacademy.org#vi-hart", 
+        "kind": "Topic", 
+        "relative_url": "#vi-hart", 
+        "standalone_title": "Vi Hart", 
+        "tags": [], 
+        "title": "Vi Hart"
+    }, 
+    {
+        "description": "Select problems from ck12.org's Algebra 1 FlexBook (Open Source Textbook).  This is a good playlist to review if you want to make sure you have a good understanding of all of the major topics in Algebra I.", 
+        "hide": false, 
+        "id": "algebra-worked-examples-2", 
+        "ka_url": "http://www.khanacademy.org#algebra-worked-examples-2", 
+        "kind": "Topic", 
+        "relative_url": "#algebra-worked-examples-2", 
+        "standalone_title": "ck12.org Algebra 1 Examples", 
+        "tags": [
+            "algebra", 
+            "examples"
+        ], 
+        "title": "Worked Examples 2"
+    }
+]

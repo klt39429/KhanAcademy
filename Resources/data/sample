@@ -1,0 +1,39 @@
+[
+    {
+        "description": "Topics covered from very basic algebra all the way through algebra II.  This is the best algebra playlist to start at if you've never seen algebra before.  Once you get your feet wet, you may want to try some of the videos in the \"Algebra I Worked Examples\" playlist.", 
+        "hide": false, 
+        "id": "core-algebra", 
+        "ka_url": "http://www.khanacademy.org#core-algebra", 
+        "kind": "Topic", 
+        "relative_url": "#core-algebra", 
+        "standalone_title": "Algebra", 
+        "tags": [
+            "math", 
+            "algebra", 
+            "khan"
+        ], 
+        "title": "Algebra", 
+        "videos": [
+            {
+                "date_added": "2011-02-20T16:27:05Z", 
+                "description": "Introduction to basic algebraic equations of the form Ax=B", 
+                "download_urls": {
+                    "m3u8": "http://s3.amazonaws.com/KA-youtube-converted/9Ek61w1LxSc.m3u8/9Ek61w1LxSc.m3u8", 
+                    "mp4": "http://s3.amazonaws.com/KA-youtube-converted/9Ek61w1LxSc.mp4/9Ek61w1LxSc.mp4", 
+                    "png": "http://s3.amazonaws.com/KA-youtube-converted/9Ek61w1LxSc.mp4/9Ek61w1LxSc.png"
+                }, 
+                "duration": 666, 
+                "ka_url": "http://www.khanacademy.org/video/simple-equations", 
+                "keywords": "algebra, introduction, CC_6_EE_5, CC_7_EE_1, CC_7_EE_4", 
+                "kind": "Video", 
+                "readable_id": "simple-equations", 
+                "relative_url": "/video/simple-equations", 
+                "title": "Simple Equations", 
+                "topic_string_keys": [
+                    "ag5zfmtoYW4tYWNhZGVteXJmCxIFVG9waWMiKHVmSml6VUpoUUxwejY4WWhpMnl3TGJZcnNJY1Zjb0t6N0lORWFIR1MMCxIFVG9waWMiKDJ6LUl6TDBRNER6b1drODVLTWZPRFVPRDA2bjVmQUxjTDZFZ1NEekcM"
+                ], 
+                "url": "http://www.youtube.com/watch?v=9Ek61w1LxSc&feature=youtube_gdata_player", 
+                "views": 1065352, 
+                "youtube_id": "9Ek61w1LxSc"
+            }, 
+            {

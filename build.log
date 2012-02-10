@@ -1,0 +1,30 @@
+Logfile initialized
+[INFO] logfile = /Users/daviddehghan/gitroot/titanium/Titanium-PredictiveCache/example/download_multiple_files/build.log
+[DEBUG] /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.v20110916080725/android/builder.py simulator DownloadMultipleFiles /Users/daviddehghan/software/android-sdk-mac_x86 /Users/daviddehghan/gitroot/titanium/Titanium-PredictiveCache/example/download_multiple_files com.mycompany.app1 2 HVGA 192.168.1.141:54300
+[INFO] Building DownloadMultipleFiles for Android ... one moment
+[INFO] Titanium SDK version: 1.8.0 (09/16/11 08:07 238187f...)
+[DEBUG] Waiting for device to be ready ...
+[TRACE] adb devices returned 1 devices/emulators
+[DEBUG] Device connected... (waited 0 seconds)
+[DEBUG] waited 0.019396 seconds on emulator to get ready
+[DEBUG] com.mycompany.app1 installed? True
+[INFO] Fastdev server running, deploying in Fastdev mode
+[INFO] Copying project resources..
+[INFO] Tiapp.xml unchanged, skipping class generation
+[DEBUG] Processing Android resource drawables
+[DEBUG] found drawable-long-land-hdpi splash screen at /Users/daviddehghan/gitroot/titanium/Titanium-PredictiveCache/example/download_multiple_files/Resources/android/images/res-long-land-hdpi/default.png
+[DEBUG] found drawable-long-land-ldpi splash screen at /Users/daviddehghan/gitroot/titanium/Titanium-PredictiveCache/example/download_multiple_files/Resources/android/images/res-long-land-ldpi/default.png
+[DEBUG] found drawable-long-port-hdpi splash screen at /Users/daviddehghan/gitroot/titanium/Titanium-PredictiveCache/example/download_multiple_files/Resources/android/images/res-long-port-hdpi/default.png
+[DEBUG] found drawable-long-port-ldpi splash screen at /Users/daviddehghan/gitroot/titanium/Titanium-PredictiveCache/example/download_multiple_files/Resources/android/images/res-long-port-ldpi/default.png
+[DEBUG] found drawable-notlong-land-hdpi splash screen at /Users/daviddehghan/gitroot/titanium/Titanium-PredictiveCache/example/download_multiple_files/Resources/android/images/res-notlong-land-hdpi/default.png
+[DEBUG] found drawable-notlong-land-ldpi splash screen at /Users/daviddehghan/gitroot/titanium/Titanium-PredictiveCache/example/download_multiple_files/Resources/android/images/res-notlong-land-ldpi/default.png
+[DEBUG] found drawable-notlong-land-mdpi splash screen at /Users/daviddehghan/gitroot/titanium/Titanium-PredictiveCache/example/download_multiple_files/Resources/android/images/res-notlong-land-mdpi/default.png
+[DEBUG] found drawable-notlong-port-hdpi splash screen at /Users/daviddehghan/gitroot/titanium/Titanium-PredictiveCache/example/download_multiple_files/Resources/android/images/res-notlong-port-hdpi/default.png
+[DEBUG] found drawable-notlong-port-ldpi splash screen at /Users/daviddehghan/gitroot/titanium/Titanium-PredictiveCache/example/download_multiple_files/Resources/android/images/res-notlong-port-ldpi/default.png
+[DEBUG] found drawable-notlong-port-mdpi splash screen at /Users/daviddehghan/gitroot/titanium/Titanium-PredictiveCache/example/download_multiple_files/Resources/android/images/res-notlong-port-mdpi/default.png
+[INFO] Waiting for SDCard to become available..
+[INFO] Re-launching application ... DownloadMultipleFiles
+[INFO] Launching application ... DownloadMultipleFiles
+[TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.mycompany.app1/.DownloadmultiplefilesActivity }
+
+[INFO] Android Emulator has exited
