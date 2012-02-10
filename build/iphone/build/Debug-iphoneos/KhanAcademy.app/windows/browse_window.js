@@ -1,1 +1,0 @@
-/Users/ethantran/Documents/Titanium/KhanAcademy/Resources/windows/browse_window.js

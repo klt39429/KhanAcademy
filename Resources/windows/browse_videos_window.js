@@ -91,16 +91,18 @@ khan_academy.browse_videos_window = function() {
 		watch_button.addEventListener( 'click', function(){
 			var active_movie = Titanium.Media.createVideoPlayer({
 				backgroundColor:'#000',
-				//movieControlMode:Titanium.Media.VIDEO_CONTROL_DEFAULT,
-				//scalingMode:Titanium.Media.VIDEO_SCALING_MODE_FILL,
 				autoplay:true,
 				fullscreen:true,
+				movieControlMode:Titanium.Media.VIDEO_CONTROL_EMBEDDED,
 				url: video['download_urls']['mp4']
 			});
-			active_movie.addEventListener( 'complete', function(){
-				_window.remove( active_movie );
-			});
-			
+            active_movie.addEventListener( 'fullscreen', function(e) { // When fullscreen status is changed.
+                if (!e.entering) { // User pressed 'done' or video finished.
+    				Ti.API.info('fullscreen');
+                    active_movie.stop();
+                    _window.remove( active_movie );
+                }
+            });			
 			// Close the pop up window, add the player to current window and play it
 			video_option.close();
 			_window.add( active_movie ); 
