@@ -109,24 +109,10 @@ khan_academy.browse_videos_window = function() {
 			'bottom' : 20
 		});
 		watch_button.addEventListener( 'click', function(){
-			var active_movie = Titanium.Media.createVideoPlayer({
-				backgroundColor:'#000',
-				autoplay:true,
-				fullscreen:true,
-				movieControlMode:Titanium.Media.VIDEO_CONTROL_EMBEDDED,
-				url: video['download_urls']['mp4']
-			});
-            active_movie.addEventListener( 'fullscreen', function(e) { // When fullscreen status is changed.
-                if (!e.entering) { // User pressed 'done' or video finished.
-    				Ti.API.info('fullscreen');
-                    active_movie.stop();
-                    _window.remove( active_movie );
-                }
-            });			
-			// Close the pop up window, add the player to current window and play it
 			video_option.close();
-			_window.add( active_movie ); 
-			active_movie.play();
+			var pv = new play_video( video['download_urls']['mp4'] );
+			pv.init();
+			pv.play();
 		});
 		
 		video_option.add_item( watch_button );
@@ -152,12 +138,18 @@ khan_academy.browse_videos_window = function() {
 			});
 			var row = Titanium.UI.createTableViewRow({
 				height: 'auto',
-				hasChild: true
+				hasChild: ( undefined != video['download_urls'] 
+						&&  undefined != video['download_urls']['mp4'])
 			});
 			row.add(label);
 			
 			row.addEventListener('click', function(){
-				_video_row_clicked(video);
+				if ( false == row.hasChild ) {
+					alert( "This section does not have any videos" );
+				}
+				else {
+					_video_row_clicked(video);
+				}
 			});
 			
 			return row;
