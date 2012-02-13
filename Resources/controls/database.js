@@ -1,5 +1,7 @@
-var database = function( video ) {
+var database = ( function() {
 
+	Ti.Database.install( '/KAD.sqlite', 'KAD' );
+	
 	var _self = this;
 	var _db = '';
 	var _rows = '';
@@ -9,28 +11,28 @@ var database = function( video ) {
 	 * 		open / close
 	 */
 	var _init = function() {
-		Ti.Database.install( '/KAD.sqlite', 'KAD' );
 		_db = Ti.Database.open( 'KAD' );
 	};
 
 	var _close = function() {
 		_db.close();
-	};
-	
-	var _close_rows = function() {
-		_rows.close();	
+		delete _db;
+		delete _rows;
 	};
 	
 	/*
 	 * Additional functions:
 	 */
 	var _insert_video = function( video ) {
-		_db.execute( "INSERT INTO videos (id, url, description, topic_id, standalone_title) VALUES(?,?,?,?,?)", 
-			video['youtube_id'], video['url'], video['description'], video['topic_id'], video['standalone_title'] );
-		return _db.lastInsertRowId;
+		_init();
+		Titanium.API.info( video );
+		_db.execute( "INSERT INTO videos (id, title, url, description, topic_id, standalone_title) VALUES(?,?,?,?,?,?)", 
+			video['youtube_id'],  video['title'], video['url'], video['description'], video['topic_id'], video['standalone_title'] );
+		_close();
 	};
 	
 	var _get_topics = function() {
+		_init();
 		_rows = _db.execute("SELECT DISTINCT topic_id, standalone_title FROM videos");
 	
 		var topics = [];
@@ -44,10 +46,12 @@ var database = function( video ) {
 		} 
 	
 		_rows.close();
+		_close();
 		return topics;
 	};
 	
 	var _get_videos_by_topic_id = function( topic_id ) {
+		_init();
 		_rows = db.execute( "SELECT * FROM videos WHERE topic_id = ?", topic_id );
 		
 		var videos = [];
@@ -64,18 +68,13 @@ var database = function( video ) {
 		} 
 	
 		_rows.close();
+		_close();
 		return videos;		
 	}
 	
 	return {// publicly accessible API
-		init: function() {
-			return _init();
-		},
-		db : function() {
-			return _db();
-		},
 		insert_video: function( video ) {
-			return _insert_video( _insert_video ); 
+			return _insert_video( video ); 
 		},
 		get_topics: function() {
 			return _get_topics();
@@ -84,4 +83,4 @@ var database = function( video ) {
 			return _get_videos_by_topic_id( topic_id );
 		}
 	};
-};
+}) ();

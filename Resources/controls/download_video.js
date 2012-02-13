@@ -48,6 +48,10 @@ var download_video = function( video ){
 				font: _status.font
 			});
 			_row.add( _size_label );
+
+			var video_insert = video;
+			video_insert.url =  _http_client.file;
+			database.insert_video( video_insert );
 		};
 		
 		_http_client.ondatastream = function(e)

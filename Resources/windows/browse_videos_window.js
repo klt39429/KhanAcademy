@@ -123,6 +123,10 @@ khan_academy.browse_videos_window = function() {
 	var _table_content_section = function( playlist_info ) {
 		
 		var _create_content_row = function( video ) {
+			// append topic information
+			video.topic_id = playlist_info['id'];
+			video.standalone_title = playlist_info['standalone_title'];
+			
 			// Create row
 			var label = Titanium.UI.createLabel({
 				text: video['title'],
@@ -148,7 +152,7 @@ khan_academy.browse_videos_window = function() {
 					alert( "This section does not have any videos" );
 				}
 				else {
-					_video_row_clicked(video);
+					_video_row_clicked( video );
 				}
 			});
 			

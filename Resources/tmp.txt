@@ -1,15 +1,27 @@
-/Library/Application Support/iPhone Simulator/5.0/Applications/F0D752F4-B56D-4F84-B676-A873334446AC/Documents
+~/Library/Application Support/iPhone Simulator/5.0/Applications/F0D752F4-B56D-4F84-B676-A873334446AC/Library/Private Documents/
+~/Library/Application Support/iPhone Simulator/5.0/Applications/F0D752F4-B56D-4F84-B676-A873334446AC/Documents
 
-[INFO] Downloaded 9426 KB
-[INFO] ONDATASTREAM1 - PROGRESS: 0.969206690788269
-[INFO] Downloaded 9455 KB
-[INFO] ONDATASTREAM1 - PROGRESS: 0.974029541015625
-[INFO] Downloaded 9502 KB
-[INFO] ONDATASTREAM1 - PROGRESS: 0.979875385761261
-[INFO] Downloaded 9560 KB
-[INFO] ONDATASTREAM1 - PROGRESS: 0.9870365262031555
-[INFO] Downloaded 9629 KB
-[INFO] ONDATASTREAM1 - PROGRESS: 0.9953668713569641
-[INFO] Downloaded 9711 KB
-[INFO] ONDATASTREAM1 - PROGRESS: 1
-[INFO] Downloaded 9756 KB
+{
+    "date_added" = "2011-02-20T16:27:05Z";
+    description = "Introduction to basic algebraic equations of the form Ax=B";
+    "download_urls" =     {
+        m3u8 = "http://s3.amazonaws.com/KA-youtube-converted/9Ek61w1LxSc.m3u8/9Ek61w1LxSc.m3u8";
+        mp4 = "http://s3.amazonaws.com/KA-youtube-converted/9Ek61w1LxSc.mp4/9Ek61w1LxSc.mp4";
+        png = "http://s3.amazonaws.com/KA-youtube-converted/9Ek61w1LxSc.mp4/9Ek61w1LxSc.png";
+    };
+    duration = 666;
+    "ka_url" = "http://www.khanacademy.org/video/simple-equations";
+    keywords = "algebra, introduction, CC_6_EE_5, CC_7_EE_1, CC_7_EE_4";
+    kind = Video;
+    "readable_id" = "simple-equations";
+    "relative_url" = "/video/simple-equations";
+    "standalone_title" = Algebra;
+    title = "Simple Equations";
+    "topic_id" = "core-algebra";
+    "topic_string_keys" =     (
+        ag5zfmtoYW4tYWNhZGVteXJmCxIFVG9waWMiKHVmSml6VUpoUUxwejY4WWhpMnl3TGJZcnNJY1Zjb0t6N0lORWFIR1MMCxIFVG9waWMiKDJ6LUl6TDBRNER6b1drODVLTWZPRFVPRDA2bjVmQUxjTDZFZ1NEekcM
+    );
+    url = "http://www.youtube.com/watch?v=9Ek61w1LxSc&feature=youtube_gdata_player";
+    views = 1065352;
+    "youtube_id" = 9Ek61w1LxSc;
+}
