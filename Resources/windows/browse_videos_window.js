@@ -177,8 +177,8 @@ khan_academy.browse_videos_window = function() {
 	}
 
 	var _init = function() {
-		_window = Titanium.UI.createWindow({
-			title : 'Videos'
+		_window = control_factory.create_window({
+			'title': 'Videos'
 		});
 		_tableview = Titanium.UI.createTableView({
 			style: 1

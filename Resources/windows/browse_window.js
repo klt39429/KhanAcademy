@@ -45,7 +45,7 @@ khan_academy.browse_window = function() {
 		return row;
 	}
 
-	var _create_tableview = function() {
+	var _update_tableview = function() {
 		
 		var playlists = _get_playlists();
 		if ( null !== playlists ) {
@@ -54,19 +54,19 @@ khan_academy.browse_window = function() {
 				rows.push( _create_tableview_row(playlists[i]) );
 			}
 						
-			// Create TableViews
-			_tableview = Titanium.UI.createTableView({
-				data: rows
-			});
+			// Update TableViews
+			_tableview.setData( rows );
 		}
 	}
 
 	var _init = function() {
-		_window = Titanium.UI.createWindow({
-			title : 'Browse'
+		_window = control_factory.create_window({
+			'title': 'Browse'
 		});
 		
-		_create_tableview();
+		_tableview = Titanium.UI.createTableView();
+		
+		_update_tableview();
 		_window.add(_tableview);
 	};
 	
@@ -75,6 +75,9 @@ khan_academy.browse_window = function() {
 		init : function() {
 			return _init();
 		},
+		update_data: function() {
+			return _update_tableview();
+		},		
 		get_window : function() {
 			return _window;
 		},

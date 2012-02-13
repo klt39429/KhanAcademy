@@ -40,7 +40,7 @@ var database = ( function() {
 		while ( _rows.isValidRow() ) {
 			topics.push({
 				'topic_id' : _rows.fieldByName( 'topic_id' ),
-				'standaline_title' : _rows.fieldByName( 'standalone_title' )
+				'standalone_title' : _rows.fieldByName( 'standalone_title' )
 			});
 			_rows.next();
 		} 
@@ -52,7 +52,7 @@ var database = ( function() {
 	
 	var _get_videos_by_topic_id = function( topic_id ) {
 		_init();
-		_rows = db.execute( "SELECT * FROM videos WHERE topic_id = ?", topic_id );
+		_rows = _db.execute( "SELECT * FROM videos WHERE topic_id = ?", topic_id );
 		
 		var videos = [];
 		
@@ -61,8 +61,9 @@ var database = ( function() {
 				'id' : _rows.fieldByName( 'id' ),
 				'url' : _rows.fieldByName( 'url' ),
 				'description' : _rows.fieldByName( 'description' ),
+				'title' : _rows.fieldByName( 'title' ),
 				'topic_id' : _rows.fieldByName( 'topic_id' ),
-				'standaline_title' : _rows.fieldByName( 'standalone_title' )
+				'standalone_title' : _rows.fieldByName( 'standalone_title' )
 			});
 			_rows.next();
 		} 

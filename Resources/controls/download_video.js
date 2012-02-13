@@ -49,8 +49,9 @@ var download_video = function( video ){
 			});
 			_row.add( _size_label );
 
+			// Save the video to the database
 			var video_insert = video;
-			video_insert.url =  _http_client.file;
+			video_insert.url =  video['download_urls']['mp4'].replace(/^.*[\\\/]/, '');
 			database.insert_video( video_insert );
 		};
 		

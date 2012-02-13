@@ -1,6 +1,8 @@
 ~/Library/Application Support/iPhone Simulator/5.0/Applications/F0D752F4-B56D-4F84-B676-A873334446AC/Library/Private Documents/
 ~/Library/Application Support/iPhone Simulator/5.0/Applications/F0D752F4-B56D-4F84-B676-A873334446AC/Documents
 
+In archive database, standalone_title is the title of the topic
+
 {
     "date_added" = "2011-02-20T16:27:05Z";
     description = "Introduction to basic algebraic equations of the form Ax=B";

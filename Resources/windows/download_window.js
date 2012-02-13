@@ -5,8 +5,8 @@ khan_academy.download_window = function() {
 
 	var _init = function() {
 		_window = '';
-		_window = Titanium.UI.createWindow({
-			title : 'Downloads'
+		_window = control_factory.create_window({
+			'title': 'Downloads'
 		});
 		
 		_tableview = Titanium.UI.createTableView();

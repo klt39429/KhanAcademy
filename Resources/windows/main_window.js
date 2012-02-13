@@ -30,11 +30,10 @@ khan_academy.main_window = function() {
 	}
 
 	var _init = function() {
-		_window = Ti.UI.createWindow({
-			backgroundColor : "#fff",
-			title : "Khan Academy",
-			fullscreen : false
-		});
+		_window = control_factory.create_window({
+			'title': 'Khan Academy',
+			'fullscreen': false
+		});		
 		_create_tabgroup();
 		_tabgroup.open();
 	};
