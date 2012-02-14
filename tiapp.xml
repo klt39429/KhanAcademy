@@ -8,7 +8,7 @@
         <target device="blackberry">false</target>
     </deployment-targets>
     <sdk-version>1.8.1</sdk-version>
-    <id>KhanAcademy</id>
+    <id>com.ethandev.khanacademy</id>
     <name>KhanAcademy</name>
     <version>1.0</version>
     <publisher>ethantran</publisher>

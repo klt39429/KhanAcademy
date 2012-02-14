@@ -34,7 +34,8 @@ khan_academy.browse_videos_window = function() {
 			},
 			color: 'red',
 			top: 8,
-			left: 10
+			left: 10,
+			width: 270
 		});
 		
 		var content_label = Titanium.UI.createLabel({
@@ -43,7 +44,7 @@ khan_academy.browse_videos_window = function() {
 			font: {
 				fontSize: 12
 			},
-			top: 34,
+			top: 10 + header_label.height,
 			left: 20,
 			right: 10,
 			bottom: 10
