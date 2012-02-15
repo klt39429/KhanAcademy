@@ -1,11 +1,17 @@
 khan_academy.archive_window = function() {
 
-	var _window = '';
-	var _tableview = '';
+	var _window, _tableview, _refresh_button;
 	
 	var _get_playlists = function() {
 		return database.get_topics();
 	}
+
+	var _open_archive_videos_window = function( topic_id ) {
+		my_app.activity_indicator.open();
+		my_app.archive_videos_window.update( topic_id );
+		my_app.main_window.get_tabgroup().tabs[1].open(my_app.archive_videos_window.get_window());
+		my_app.activity_indicator.close();
+	};
 
 	var _create_tableview_row = function( playlist ) {
 		// Create row
@@ -29,8 +35,7 @@ khan_academy.archive_window = function() {
 		
 		// on row click, open browse videos window
 		row.addEventListener('click', function() {
-			my_app.archive_videos_window.update( playlist['topic_id'] );
-			my_app.main_window.get_tabgroup().tabs[1].open(my_app.archive_videos_window.get_window());
+			_open_archive_videos_window( playlist['topic_id'] );
 		});
 		
 		row.add(label);		
@@ -52,14 +57,26 @@ khan_academy.archive_window = function() {
 		}
 	}
 
+	var _create_refresh_button = function() {
+		_refresh_button = Titanium.UI.createButton({
+			systemButton : Titanium.UI.iPhone.SystemButton.REFRESH
+		});
+		_refresh_button.addEventListener( 'click', function(){
+			_update_tableview();	
+		});
+	};
+
 	var _init = function() {
 		_window = control_factory.create_window({
 			'title': 'Archive'
 		});
+
 		_tableview = Titanium.UI.createTableView();
-		
 		_update_tableview();
 		_window.add(_tableview);
+		
+		_create_refresh_button();
+		_window.setLeftNavButton(_refresh_button);
 	};
 	
 	return {// publicly accessible API
