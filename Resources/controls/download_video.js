@@ -3,7 +3,12 @@ var download_video = function( video ){
 	var self = this;
 	var _window;
 	var _http_client;
-	var _row, _indicator, _image, _title, _status, _size_label;
+	var _row, _indicator, _image, _title, _label_progress, _size_label;
+	
+	var _status;
+	this.STATUS_PAUSED = 0;
+	this.STATUS_DOWNLOADING = 1;
+	this.STATUS_COMPLETED = 2;
 	
 	/*
 	 * @input: length in bytes
@@ -37,17 +42,19 @@ var download_video = function( video ){
 				download_tab.setBadge( download_tab.badge - 1 );
 			}
 			
+			// GUI update
 			_indicator.hide();
-			_status.text = "Download Completed";
-			
+			_label_progress.text = "Download Completed";
 			_size_label = Titanium.UI.createLabel({
 				text: 'Size: ' + _get_size_format( _http_client.getResponseHeader('Content-Length') ),
-				top: _status.top - 20,
-				left: _status.left,
-				height: _status.height,
-				font: _status.font
+				top: _label_progress.top - 20,
+				left: _label_progress.left,
+				height: _label_progress.height,
+				font: _label_progress.font
 			});
 			_row.add( _size_label );
+			
+			_status = self.STATUS_COMPLETED;
 
 			// Save the video to the database
 			var video_insert = video;
@@ -58,7 +65,7 @@ var download_video = function( video ){
 		_http_client.ondatastream = function(e)
 		{
 			var length_format =  _get_size_format( e.progress * _http_client.getResponseHeader('Content-Length') );
-			_status.text = 'Downloaded: ' + length_format + " / " + _get_size_format(_http_client.getResponseHeader('Content-Length')); 
+			_label_progress.text = 'Downloaded: ' + length_format + " / " + _get_size_format(_http_client.getResponseHeader('Content-Length')); 
 			
 			_indicator.value = e.progress ;
 		};
@@ -73,7 +80,21 @@ var download_video = function( video ){
 			Titanium.Filesystem.applicationDataDirectory + video['download_urls']['mp4'].replace(/^.*[\\\/]/, ''));
 		_http_client.send();		
 				
+		_status = self.STATUS_DOWNLOADING;		
+				
 		return _http_client;
+	}
+	
+	var _pause_download = function() {
+		_http_client.abort();
+		_status = self.STATUS_PAUSED;
+		_label_progress.text = "Download paused";
+	};
+	
+	var _resume_download = function() {
+		_label_progress.text = "Resuming Download... ";
+		_status = self.STATUS_DOWNLOADING;
+		_create_http_client();
 	}
 	
 	var _create_row = function() {
@@ -121,14 +142,23 @@ var download_video = function( video ){
 		_row.add( _indicator );
 		_indicator.show();
 		
-		_status = Titanium.UI.createLabel({
+		_label_progress = Titanium.UI.createLabel({
 			text: "",
 			top: 50,
 			left: 130,
 			height: 15,
 			font:{fontSize:11, fontWeight:'normal'},			
 		});
-		_row.add( _status );
+		_row.add( _label_progress );
+		
+		_row.addEventListener( 'click', function() {
+			if ( self.STATUS_DOWNLOADING == _status ) {
+				_pause_download();
+			}
+			else if ( self.STATUS_PAUSED == _status ) {
+				_resume_download();
+			}
+		});
 		
 		return _row;
 	};
@@ -151,6 +181,9 @@ var download_video = function( video ){
 		},
 		get_http_client: function() {
 			return _http_client;
+		},
+		status: function() {
+			return _status;	
 		}
 	};
 
