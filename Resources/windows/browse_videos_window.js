@@ -95,7 +95,12 @@ khan_academy.browse_videos_window = function() {
 			dlv.init();
 			
 			var tableview = my_app.download_window.get_tableview();
-			tableview.appendRow(dlv.get_row());
+			if ( tableview.data.length == 0 ) {
+				tableview.appendRow( dlv.get_row() );
+			}
+			else {
+				tableview.insertRowBefore( 0, dlv.get_row() );
+			}
 			
 			video_option.close();
 		});
