@@ -1,7 +1,6 @@
 khan_academy.browse_window = function() {
 
-	var _window = '';
-	var _tableview = '';
+	var _window, _tableview, _searchbar;
 	
 	var _get_playlists = function() {
 		var file_name = '/data/playlists.json';
@@ -39,7 +38,8 @@ khan_academy.browse_window = function() {
 		var row = Titanium.UI.createTableViewRow({
 			height: 'auto',
 			hasChild: true,
-			playlist_id: playlist['id']
+			playlist_id: playlist['id'],
+			filter: playlist['standalone_title'] + " " + playlist['description'] + " " + playlist['tags'].join(" ")
 		});
 		
 		// on row click, open browse videos window
@@ -50,6 +50,24 @@ khan_academy.browse_window = function() {
 		row.add(label);		
 		return row;
 	}
+
+	var _create_searchbar = function() {
+		_searchbar = Titanium.UI.createSearchBar({
+			barColor: '#5E8C1B',
+			showCancel: false,
+			hintText: 'search'
+		});
+		
+		_searchbar.addEventListener('change', function(e){
+			e.value;
+		});
+		_searchbar.addEventListener('return', function(e){
+			_searchbar.blur();
+		});		
+		_searchbar.addEventListener('cancel', function(e){
+			_searchbar.blur();
+		});		
+	};
 
 	var _update_tableview = function() {
 		
@@ -63,14 +81,20 @@ khan_academy.browse_window = function() {
 			// Update TableViews
 			_tableview.setData( rows );
 		}
-	}
+	};
 
 	var _init = function() {
 		_window = control_factory.create_window({
 			'title': 'Browse'
 		});
 		
-		_tableview = Titanium.UI.createTableView();
+		_create_searchbar();
+		
+		_tableview = Titanium.UI.createTableView({
+			search: _searchbar,
+			searchHidden: true,
+			filterAttribute: 'filter'
+		});
 		
 		_update_tableview();
 		_window.add(_tableview);

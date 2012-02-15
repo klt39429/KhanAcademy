@@ -1,5 +1,9 @@
-~/Library/Application Support/iPhone Simulator/5.0/Applications/F0D752F4-B56D-4F84-B676-A873334446AC/Library/Private Documents/
-~/Library/Application Support/iPhone Simulator/5.0/Applications/F0D752F4-B56D-4F84-B676-A873334446AC/Documents
+database:
+~/Library/Application Support/iPhone Simulator/5.0/Applications/28A2FA2B-5FB4-4274-9550-7ADC44544E54/Library/Private Documents
+
+files:
+~/Library/Application Support/iPhone Simulator/5.0/Applications/28A2FA2B-5FB4-4274-9550-7ADC44544E54/Documents
+
 
 In archive database, standalone_title is the title of the topic
 
