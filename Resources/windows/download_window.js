@@ -12,31 +12,6 @@ khan_academy.download_window = function() {
 			e.row.stop();
 		});
 	};
-	
-	/*
-	 * Create edit and cancel buttons for tableview
-	 * to be displade on rightNav
-	 */
-	var _create_editting_buttons = function( _tableview, _window ){
-		_edit_button = Titanium.UI.createButton({
-			title:'Edit'
-		});
-		_edit_button.addEventListener('click', function(){
-			_window.setRightNavButton(_cancel_button);
-			_tableview.editing = true;
-		});
-		
-		_cancel_button = Titanium.UI.createButton({
-			title:'Done',
-			style:Titanium.UI.iPhone.SystemButtonStyle.DONE
-		});
-		_cancel_button.addEventListener('click', function(){
-			_window.setRightNavButton(_edit_button);
-			_tableview.editing = false;
-		});
-		
-		_window.setRightNavButton(_edit_button);		
-	}
 
 	var _init = function() {
 		_window = '';
@@ -45,8 +20,9 @@ khan_academy.download_window = function() {
 		});
 		
 		_create_tableview();
-		_create_editting_buttons( _tableview, _window );
 		_window.add(_tableview);
+		
+		control_factory.create_editting_buttons( _edit_button, _cancel_button, _tableview, _window);
 	};
 	
 	

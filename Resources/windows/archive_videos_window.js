@@ -1,11 +1,27 @@
 khan_academy.archive_videos_window = function() {
 
-	var _window = '';
-	var _tableview = '';
+	var _window = '', _tableview = '', _edit_button, _cancel_button;
 	
 	var _get_playlist_info = function( playlist_id ) {
 		return database.get_videos_by_topic_id( playlist_id );
 	}
+
+	/*
+	 * Delete a row from table:
+	 * 		remove it from sqllite3
+	 * 		delete the file
+	 * @input: video_url is filename on local phone
+	 */
+	var _remove = function( video_url ) {
+		// remove file from database
+		database.delete_video_by_url( video_url );
+		
+		// remove file from local
+		var video_file = Titanium.Filesystem.getFile( Titanium.Filesystem.applicationDataDirectory, video_url );
+		if ( video_file.exists() ){
+			video_file.deleteFile();
+		}
+	};
 
 	/*
 	 * Play the video
@@ -36,7 +52,9 @@ khan_academy.archive_videos_window = function() {
 			});
 			var row = Titanium.UI.createTableViewRow({
 				height: 'auto',
-				hasChild: true
+				hasChild: true,
+				video_url: video['url'],
+				remove_video: _remove
 			});
 			row.add(label);
 			
@@ -67,14 +85,27 @@ khan_academy.archive_videos_window = function() {
 		]);
 	}
 
+	var _create_tableview = function() {
+		_tableview = Titanium.UI.createTableView({
+			style: 1,
+			editable: true,
+			allowsSelectionDuringEditing: true
+		});
+		
+		_tableview.addEventListener( 'delete', function(e){
+			e.row.remove_video(e.row.video_url);
+		});
+	};
+
 	var _init = function() {
 		_window = control_factory.create_window({
 			'title': 'Videos'
 		});
-		_tableview = Titanium.UI.createTableView({
-			style: 1
-		});
+	
+		_create_tableview();
 		_window.add(_tableview);
+		
+		control_factory.create_editting_buttons( _edit_button, _cancel_button, _tableview, _window);
 	};
 	
 	var _update = function( playlist_id ) {

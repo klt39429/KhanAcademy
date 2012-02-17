@@ -25,10 +25,15 @@ var database = ( function() {
 	 */
 	var _insert_video = function( video ) {
 		_init();
-		Titanium.API.info( video );
 		_db.execute( "INSERT INTO videos (id, title, url, description, topic_id, standalone_title) VALUES(?,?,?,?,?,?)", 
 			video['youtube_id'],  video['title'], video['url'], video['description'], video['topic_id'], video['standalone_title'] );
 		_close();
+	};
+	
+	var _delete_video_by_url = function( video_url ){
+		_init();
+		_db.execute( "DELETE FROM videos WHERE url=?", video_url);
+		_close();		
 	};
 	
 	var _get_topics = function() {
@@ -82,6 +87,9 @@ var database = ( function() {
 		},
 		get_videos_by_topic_id: function( topic_id ) {
 			return _get_videos_by_topic_id( topic_id );
+		},
+		delete_video_by_url: function( video_url ) {
+			return _delete_video_by_url( video_url );
 		}
 	};
 }) ();

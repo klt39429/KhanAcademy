@@ -30,7 +30,7 @@ khan_academy.browse_videos_window = function() {
 			},
 			top: 10 + header_label.height,
 			left: 20,
-			right: 10,
+			width: 260,
 			bottom: 10
 		});
 		
@@ -128,7 +128,8 @@ khan_academy.browse_videos_window = function() {
 				top: 10,
 				bottom: 10,
 				left: 10,
-				right: 20
+				right: 20,
+				className: 'browse-video'
 			});
 			var row = Titanium.UI.createTableViewRow({
 				height: 'auto',
