@@ -152,15 +152,10 @@ khan_academy.browse_videos_window = function() {
 		var videos = playlist_info['videos'];
 		var section = Titanium.UI.createTableViewSection();
 		
-		/*
 		for ( i in videos ) {
 			section.add( _create_content_row(videos[i]) );
-		}*/
-
-		for (var i=0; i < 10; i++) {
-			section.add( _create_content_row(videos[i]) );
 		}
-					
+		
 		return section;
 	}
 

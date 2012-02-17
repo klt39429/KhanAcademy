@@ -24,6 +24,19 @@ var download_video = function( video ){
 		}
 	}
 	
+	/*
+	 * Reduce the badge value
+	 */
+	var _reduce_badge = function() {
+		var download_tab = my_app.main_window.get_tabgroup().tabs[2];
+		if ( 1 == download_tab.badge || null == download_tab.badge ) {
+			download_tab.setBadge( null );
+		}
+		else {
+			download_tab.setBadge( download_tab.badge - 1 );
+		}		
+	};
+	
 	var _create_http_client = function() {
 		
 		_http_client = Titanium.Network.createHTTPClient();
@@ -32,15 +45,9 @@ var download_video = function( video ){
 		_http_client.onload = function(e)
 		{
 			Ti.API.info(_http_client.file);
-			
-			// Set badge
-			var download_tab = my_app.main_window.get_tabgroup().tabs[2];
-			if ( 1 == download_tab.badge || null == download_tab.badge ) {
-				download_tab.setBadge( null );
-			}
-			else {
-				download_tab.setBadge( download_tab.badge - 1 );
-			}
+
+			_reduce_badge();
+
 			
 			// GUI update
 			_indicator.hide();
@@ -91,6 +98,17 @@ var download_video = function( video ){
 		_label_progress.text = "Download paused";
 	};
 	
+	/*
+	 * stop = 
+	 * 		abord download + remove the row
+	 * 		delete self to free memory
+	 */
+	var _stop = function() {
+		_http_client.abort();
+		_reduce_badge();
+		delete self;
+	};
+	
 	var _resume_download = function() {
 		_label_progress.text = "Resuming Download... ";
 		_status = self.STATUS_DOWNLOADING;
@@ -99,8 +117,10 @@ var download_video = function( video ){
 	
 	var _create_row = function() {
 		
+		// Pass stop function so it can be called from download_window
 		_row = Titanium.UI.createTableViewRow({
-			height: 'auto'
+			height: 'auto',
+			stop: _stop
 		});
 		
 		var image_outside_view = Titanium.UI.createView({
@@ -181,6 +201,9 @@ var download_video = function( video ){
 		},
 		get_http_client: function() {
 			return _http_client;
+		},
+		stop: function() {
+			return stop();	
 		},
 		status: function() {
 			return _status;	
