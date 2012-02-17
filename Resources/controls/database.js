@@ -36,6 +36,12 @@ var database = ( function() {
 		_close();		
 	};
 	
+	var _delete_videos_by_topic_id = function( topic_id ){
+		_init();
+		_db.execute( "DELETE FROM videos WHERE topic_id=?", topic_id );
+		_close();		
+	};
+	
 	var _get_topics = function() {
 		_init();
 		_rows = _db.execute("SELECT DISTINCT topic_id, standalone_title FROM videos");
@@ -90,6 +96,9 @@ var database = ( function() {
 		},
 		delete_video_by_url: function( video_url ) {
 			return _delete_video_by_url( video_url );
+		},
+		delete_videos_by_topic_id: function( topic_id ) {
+			return _delete_videos_by_topic_id( topic_id );
 		}
 	};
 }) ();
