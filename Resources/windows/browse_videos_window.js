@@ -4,23 +4,7 @@ khan_academy.browse_videos_window = function() {
 	var _tableview = '';
 	
 	var _get_playlist_info = function( playlist_id ) {
-		Titanium.API.info( playlist_id );
-		var file_name = '/data/library_list.json';
-		var file = Titanium.Filesystem.getFile(Titanium.Filesystem.resourcesDirectory, file_name);
- 
-		if (file.exists()) {
-  			playlist_infos = JSON.parse(file.read());
-  			
-  			for ( i in playlist_infos ) {
-  				if ( playlist_infos[i]['id'] == playlist_id ) {
-  					return playlist_infos[i];
-  				}
-  			}
-  			return null
-		}
-		else {
-			return null;
-		}
+		return my_app.data_manager.get_playlist_info( playlist_id ); 
 	}
 
 	var _table_header_section = function( playlist_info ) {

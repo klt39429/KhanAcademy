@@ -19,17 +19,27 @@ my_app = {
 	archive_videos_window: new khan_academy.archive_videos_window(),
 	
 	// the main window with tab group
-	main_window : new khan_academy.main_window()
+	main_window : new khan_academy.main_window(),
+	
+	// data manager
+	data_manager: new khan_academy.data_manager()
 };
 
-my_app.activity_indicator.init();
 
-my_app.download_window.init();
-my_app.browse_window.init();
-my_app.archive_window.init();
+var init_windows = function(){
+	my_app.activity_indicator.init();
+	
+	my_app.download_window.init();
+	my_app.browse_window.init();
+	my_app.archive_window.init();
+	
+	my_app.browse_videos_window.init();
+	my_app.archive_videos_window.init();
+	
+	my_app.main_window.init();	
+};
 
-my_app.browse_videos_window.init();
-my_app.archive_videos_window.init();
-
-my_app.main_window.init();
+// We will retrieve data at the beginning if not exists - to ensure that we always have it availalbe
+// Other windows can only be loaded once the data is retrieved for the first time
+my_app.data_manager.init( init_windows );
 

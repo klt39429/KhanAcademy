@@ -3,15 +3,7 @@ khan_academy.browse_window = function() {
 	var _window, _tableview, _searchbar;
 	
 	var _get_playlists = function() {
-		var file_name = '/data/playlists.json';
-		var file = Titanium.Filesystem.getFile(Titanium.Filesystem.resourcesDirectory, file_name);
- 
-		if (file.exists()) {
-  			return JSON.parse(file.read());
-		}
-		else {
-			return null;
-		}
+		return my_app.data_manager.get_all_playlists();
 	}
 
 	var _open_browse_videos_window = function( playlist_id ){
