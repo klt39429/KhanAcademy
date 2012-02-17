@@ -1,8 +1,8 @@
 database:
-~/Library/Application Support/iPhone Simulator/5.0/Applications/28A2FA2B-5FB4-4274-9550-7ADC44544E54/Library/Private Documents
+/Users/ethantran/Library/Application%20Support/iPhone%20Simulator/5.0/Applications/A76DB06B-D68B-4E8A-80F1-63CCA0E675A2/Documents/Library/Private Documents
 
 files:
-~/Library/Application Support/iPhone Simulator/5.0/Applications/28A2FA2B-5FB4-4274-9550-7ADC44544E54/Documents
+/Users/ethantran/Library/Application%20Support/iPhone%20Simulator/5.0/Applications/A76DB06B-D68B-4E8A-80F1-63CCA0E675A2/Documents/
 
 
 In archive database, standalone_title is the title of the topic

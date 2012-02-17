@@ -1,6 +1,6 @@
 khan_academy.browse_window = function() {
 
-	var _window, _tableview, _searchbar;
+	var _window, _tableview, _searchbar, _refresh_button;
 	
 	var _get_playlists = function() {
 		return my_app.data_manager.get_all_playlists();
@@ -42,6 +42,15 @@ khan_academy.browse_window = function() {
 		row.add(label);		
 		return row;
 	}
+
+	var _create_refresh_button = function() {
+		_refresh_button = Titanium.UI.createButton({
+			systemButton : Titanium.UI.iPhone.SystemButton.REFRESH
+		});
+		_refresh_button.addEventListener( 'click', function(){
+			my_app.data_manager.try_retrieve_data( _update_tableview, true );	
+		});
+	};
 
 	var _create_searchbar = function() {
 		_searchbar = Titanium.UI.createSearchBar({
@@ -90,6 +99,9 @@ khan_academy.browse_window = function() {
 		
 		_update_tableview();
 		_window.add(_tableview);
+		
+		_create_refresh_button();
+		_window.setLeftNavButton(_refresh_button);		
 	};
 	
 	return {// publicly accessible API

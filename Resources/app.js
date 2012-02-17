@@ -41,5 +41,5 @@ var init_windows = function(){
 
 // We will retrieve data at the beginning if not exists - to ensure that we always have it availalbe
 // Other windows can only be loaded once the data is retrieved for the first time
-my_app.data_manager.init( init_windows );
-
+my_app.data_manager.init();
+my_app.data_manager.try_retrieve_data( init_windows, false );

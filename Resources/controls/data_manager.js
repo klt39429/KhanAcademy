@@ -11,19 +11,20 @@ khan_academy.data_manager = function() {
 	var _folder_name, _library, _playlist, _data_dir, _res_dir, _data_folder, _activity_indicator;
 	var _callback_func;
 	
-	var _init = function( callback_func ) {
-	
-		_callback_func = callback_func;
+	var _init = function() {
 		
 		// CONFIGURATION DATA
 		_folder_name = "data";
+		
 		_playlist = {
 			name: "playlists.json",
 			url: 'http://www.khanacademy.org/api/v1/playlists'};
 		_library = {
 			name: "library.json",
 			url: 'http://www.khanacademy.org/api/v1/playlists/library/list'};
+			
 		_data_dir = Titanium.Filesystem.applicationDataDirectory;
+		Ti.API.info( _data_dir );
 		_res_dir = Titanium.Filesystem.resourcesDirectory;
 
 		// Create data_folder if not exsits
@@ -31,20 +32,25 @@ khan_academy.data_manager = function() {
 		
 		_activity_indicator = new khan_academy.activity_indicator();
 		_activity_indicator.init();
+	};
+
+	/*
+	 * If is_force = true --> always try to retrieve new data from server
+	 * If not, check if data folder exists
+	 * after all that, call _callback_func();
+	 */
+	var _try_retrieve_data = function( callback_func, is_force ) {
 		
-		if ( !_library_exists() ) {
+		_callback_func = callback_func;
+		var file = Titanium.Filesystem.getFile( _data_folder.nativePath, _library['name'] );
+		
+		if ( is_force || !file.exists() ) {
 			_retrieve_data( _library['name'], _library['url'] );
 		}
 		else {
 			_callback_func();
 		}
 	};
-
-	var _library_exists = function() {
-		
-		var file = Titanium.Filesystem.getFile( _data_folder.nativePath, _library['url'] );	
-		return file.exists(); 
-	}
 
 	/*
 	 * Create data folder under Application Data folder
@@ -144,6 +150,8 @@ khan_academy.data_manager = function() {
 		get_all_playlists: function(){
 			return _get_file_json( _playlist['name'] );
 		},
-				
+		try_retrieve_data: function( callback_func, is_force ) {
+			return _try_retrieve_data( callback_func, is_force );
+		}
 	};
 };
