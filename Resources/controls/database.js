@@ -25,8 +25,10 @@ var database = ( function() {
 	 */
 	var _insert_video = function( video ) {
 		_init();
-		_db.execute( "INSERT INTO videos (id, title, url, description, topic_id, standalone_title) VALUES(?,?,?,?,?,?)", 
-			video['youtube_id'],  video['title'], video['url'], video['description'], video['topic_id'], video['standalone_title'] );
+		Titanium.API.info( video );
+		_db.execute( "INSERT INTO videos (id, title, url, description, ka_url, topic_id, standalone_title, download_url, image_url) VALUES(?,?,?,?,?,?,?,?,?)", 
+			video['youtube_id'],  video['title'], video['url'], video['description'], video['ka_url'], 
+			video['topic_id'], video['standalone_title'], video['download_urls']['mp4'], video['download_urls']['png'] );
 		_close();
 	};
 	
@@ -72,9 +74,12 @@ var database = ( function() {
 				'id' : _rows.fieldByName( 'id' ),
 				'url' : _rows.fieldByName( 'url' ),
 				'description' : _rows.fieldByName( 'description' ),
+				'ka_url' : _rows.fieldByName( 'ka_url' ),
 				'title' : _rows.fieldByName( 'title' ),
 				'topic_id' : _rows.fieldByName( 'topic_id' ),
-				'standalone_title' : _rows.fieldByName( 'standalone_title' )
+				'standalone_title' : _rows.fieldByName( 'standalone_title' ),
+				'download_url' : _rows.fieldByName( 'download_url' ),
+				'image_url' : _rows.fieldByName( 'image_url' )
 			});
 			_rows.next();
 		} 

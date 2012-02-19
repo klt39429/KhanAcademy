@@ -1,3 +1,5 @@
+work on : convert browse videos info for facebook purpose
+
 database:
 /Users/ethantran/Library/Application%20Support/iPhone%20Simulator/5.0/Applications/A76DB06B-D68B-4E8A-80F1-63CCA0E675A2/Documents/Library/Private Documents
 

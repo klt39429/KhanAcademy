@@ -1,18 +1,19 @@
 var modal_popup = function(height_factor, width_factor){
 
-	/**********************************************************************
-	 * Data declaration stuff
-	 **********************************************************************/
 	var self = this;
-	var _window, _view;
+	var _window, _view, _close_button;
 	
 	var _close = function() {
 		_window.close();
-		delete self;
 	}
 	
 	var _open = function() {
 		_window.open();
+	}
+	
+	var _move_close_button_inside = function() {
+		_close_button.top = Ti.Platform.displayCaps.platformHeight * (1 - height_factor)/2 + 5; 
+		_close_button.right = Ti.Platform.displayCaps.platformWidth * (1 - width_factor)/2 + 5;
 	}
 	
 	var _init = function() {
@@ -26,7 +27,7 @@ var modal_popup = function(height_factor, width_factor){
 			backgroundColor : '#FFF'		
 		});
 		
-		var close_button = Titanium.UI.createButton({
+		_close_button = Titanium.UI.createButton({
 			backgroundImage: '/images/close.png',
 			top: Ti.Platform.displayCaps.platformHeight * (1 - height_factor)/2 - 40,
 			right: Ti.Platform.displayCaps.platformWidth * (1 - width_factor)/2,
@@ -34,12 +35,12 @@ var modal_popup = function(height_factor, width_factor){
 			height:28,
 			zIndex:9999,
 		});	
-		close_button.addEventListener("click", _close);
+		_close_button.addEventListener("click", _close);
 	
 		_window = Ti.UI.createWindow({
 			backgroundColor : '#40000000'	
 		});
-		_window.add( close_button );
+		_window.add( _close_button );
 	
 		_window.add(_view);
 	}
@@ -67,6 +68,9 @@ var modal_popup = function(height_factor, width_factor){
 		},
 		add_item : function( item ) {
 			return _add_item( item );
+		},
+		move_close_button_inside : function() {
+			return _move_close_button_inside();
 		}
 	};
 

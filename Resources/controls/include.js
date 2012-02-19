@@ -1,6 +1,7 @@
 Ti.include( 'activity_indicator.js' );
 Ti.include( 'server_call.js' );
 Ti.include( 'modal_popup.js' );
+Ti.include( 'social_media.js' );
 Ti.include( 'download_video.js' );
 Ti.include( 'play_video.js' );
 Ti.include( 'database.js' );

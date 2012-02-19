@@ -67,6 +67,10 @@ khan_academy.archive_videos_window = function() {
 				}
 			});
 			
+			row.addEventListener('longpress', function(){
+				social_media.open( video );
+			});			
+			
 			return row;
 		}
 		
