@@ -88,24 +88,6 @@ khan_academy.archive_window = function() {
 		});
 	};
 
-	var _create_searchbar = function() {
-		_searchbar = Titanium.UI.createSearchBar({
-			barColor: '#5E8C1B',
-			showCancel: false,
-			hintText: 'search'
-		});
-		
-		_searchbar.addEventListener('change', function(e){
-			e.value;
-		});
-		_searchbar.addEventListener('return', function(e){
-			_searchbar.blur();
-		});		
-		_searchbar.addEventListener('cancel', function(e){
-			_searchbar.blur();
-		});		
-	};
-
 	var _create_tableview = function() {
 		_tableview = Titanium.UI.createTableView({
 			search: _searchbar,
@@ -124,7 +106,7 @@ khan_academy.archive_window = function() {
 			'title': 'Archive'
 		});
 
-		_create_searchbar();
+		_searchbar = control_factory.create_searchbar();
 
 		_create_tableview();
 		_update_tableview();

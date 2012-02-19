@@ -27,6 +27,29 @@ control_factory.create_editting_buttons = function( _edit_button, _cancel_button
 }
 
 /***********************************************************************
+ * Create search bar
+ ***********************************************************************/
+control_factory.create_searchbar = function() {
+	var _searchbar = Titanium.UI.createSearchBar({
+		barColor: '#5E8C1B',
+		showCancel: false,
+		hintText: 'search'
+	});
+	
+	_searchbar.addEventListener('change', function(e){
+		e.value;
+	});
+	_searchbar.addEventListener('return', function(e){
+		_searchbar.blur();
+	});		
+	_searchbar.addEventListener('cancel', function(e){
+		_searchbar.blur();
+	});		
+	
+	return _searchbar;
+}
+
+/***********************************************************************
  * Add @params to @control like: width, height, title...
  * The key in params element has to match with control property
  ***********************************************************************/

@@ -1,6 +1,6 @@
 khan_academy.archive_videos_window = function() {
 
-	var _window = '', _tableview = '', _edit_button, _cancel_button;
+	var _window = '', _tableview = '', _edit_button, _cancel_button, _searchbar;
 	
 	var _get_playlist_info = function( playlist_id ) {
 		return database.get_videos_by_topic_id( playlist_id );
@@ -54,7 +54,8 @@ khan_academy.archive_videos_window = function() {
 				height: 'auto',
 				hasChild: true,
 				video_url: video['url'],
-				remove_video: _remove
+				remove_video: _remove,
+				filter: video['title']
 			});
 			row.add(label);
 			
@@ -93,7 +94,10 @@ khan_academy.archive_videos_window = function() {
 		_tableview = Titanium.UI.createTableView({
 			style: 1,
 			editable: true,
-			allowsSelectionDuringEditing: true
+			allowsSelectionDuringEditing: true,
+			search: _searchbar,
+			searchHidden: true,
+			filterAttribute: 'filter'
 		});
 		
 		_tableview.addEventListener( 'delete', function(e){
@@ -106,6 +110,8 @@ khan_academy.archive_videos_window = function() {
 			'title': 'Videos'
 		});
 	
+			
+		_searchbar = control_factory.create_searchbar();
 		_create_tableview();
 		_window.add(_tableview);
 		

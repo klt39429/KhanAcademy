@@ -1,7 +1,6 @@
 khan_academy.browse_videos_window = function() {
 
-	var _window = '';
-	var _tableview = '';
+	var _window, _tableview, _searchbar;
 	
 	var _get_playlist_info = function( playlist_id ) {
 		return my_app.data_manager.get_playlist_info( playlist_id ); 
@@ -134,7 +133,8 @@ khan_academy.browse_videos_window = function() {
 			var row = Titanium.UI.createTableViewRow({
 				height: 'auto',
 				hasChild: ( undefined != video['download_urls'] 
-						&&  undefined != video['download_urls']['mp4'])
+						&&  undefined != video['download_urls']['mp4']),
+				filter: video['title']
 			});
 			row.add(label);
 			
@@ -181,8 +181,14 @@ khan_academy.browse_videos_window = function() {
 		_window = control_factory.create_window({
 			'title': 'Videos'
 		});
+		
+		_searchbar = control_factory.create_searchbar();
+
 		_tableview = Titanium.UI.createTableView({
-			style: 1
+			style: 1,
+			search: _searchbar,
+			searchHidden: true,
+			filterAttribute: 'filter'
 		});
 		_window.add(_tableview);
 	};
