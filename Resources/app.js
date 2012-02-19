@@ -9,10 +9,11 @@ my_app = {
 	// additional view
 	activity_indicator: new khan_academy.activity_indicator(),
 
-	// the main 3 windows
+	// the main 4 windows
 	download_window: new khan_academy.download_window(),
 	browse_window: new khan_academy.browse_window(),
 	archive_window: new khan_academy.archive_window(),
+	information_window: new khan_academy.information_window(),
 	
 	// subsequently loaded window
 	browse_videos_window: new khan_academy.browse_videos_window(),
@@ -32,6 +33,7 @@ var init_windows = function(){
 	my_app.download_window.init();
 	my_app.browse_window.init();
 	my_app.archive_window.init();
+	my_app.information_window.init();
 	
 	my_app.browse_videos_window.init();
 	my_app.archive_videos_window.init();

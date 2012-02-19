@@ -8,25 +8,32 @@ khan_academy.main_window = function() {
 		_tabgroup = Titanium.UI.createTabGroup();
 
 		var tab1 = Titanium.UI.createTab({
-			icon : Titanium.UI.iPhone.SystemIcon.SEARCH,
+			icon : '/images/browse.png',
 			title : 'Browse',
 			window : my_app.browse_window.get_window()
 		});
 		_tabgroup.addTab(tab1);
 
 		var tab2 = Titanium.UI.createTab({
-			icon : Titanium.UI.iPhone.SystemIcon.BOOKMARKS,
+			icon : '/images/archive.png',
 			title : 'Archive',
 			window : my_app.archive_window.get_window()
 		});
 		_tabgroup.addTab(tab2);
 
 		var tab3 = Titanium.UI.createTab({
-			icon : Titanium.UI.iPhone.SystemIcon.DOWNLOADS,
+			icon : '/images/download.png',
 			title : 'Downloads',
 			window : my_app.download_window.get_window()
 		});
 		_tabgroup.addTab(tab3);
+
+		var tab4 = Titanium.UI.createTab({
+			icon : '/images/info.png',
+			title : 'Information',
+			window : my_app.information_window.get_window()
+		});
+		_tabgroup.addTab(tab4);
 	}
 
 	var _init = function() {
