@@ -15,6 +15,12 @@ var play_video = function( video ) {
 		// Create window
 		_window = '';
 		_window = Titanium.UI.createWindow({
+			orientationModes: [Titanium.UI.PORTRAIT,
+			    Titanium.UI.UPSIDE_PORTRAIT,
+			    Titanium.UI.LANDSCAPE_LEFT,
+			    Titanium.UI.LANDSCAPE_RIGHT,
+			    Titanium.UI.FACE_UP,
+			    Titanium.UI.FACE_DOWN]
 		});
 		
 		// Create the player
