@@ -27,6 +27,30 @@ control_factory.create_editting_buttons = function( _edit_button, _cancel_button
 }
 
 /***********************************************************************
+ * Create text-rich information row
+ ***********************************************************************/
+control_factory.create_description_row = function( text ) {
+	var content_label = Titanium.UI.createLabel({
+		text: text,
+		height: 'auto',
+		font: {
+			fontSize: 12
+		},
+		top: 7,
+		left: 20,
+		width: 260,
+		bottom: 7
+	});
+	
+	var row = Titanium.UI.createTableViewRow({
+		height: 'auto'
+	})
+	row.add(content_label);
+	
+	return row;
+}
+
+/***********************************************************************
  * Create search bar
  ***********************************************************************/
 control_factory.create_searchbar = function() {

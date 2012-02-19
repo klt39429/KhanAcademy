@@ -1,8 +1,8 @@
-#appname: KhanAcademy
-#publisher: ethantran
-#url: http://ethandev.com/KhanAcademy
-#image: appicon.png
-#appid: KhanAcademy
-#desc: undefined
-#type: ipad
-#guid: f66a8809-3776-402d-b1e3-6a17bb4f4ee0
+#appname:KhanAcademy
+#publisher:ethantran
+#url:http://ethandev.com/khan-archiver
+#image:appicon.png
+#appid:com.ethandev.khanarchiver
+#desc:not specified
+#type:ipad
+#guid:f66a8809-3776-402d-b1e3-6a17bb4f4ee0

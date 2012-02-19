@@ -8,11 +8,11 @@
         <target device="blackberry">false</target>
     </deployment-targets>
     <sdk-version>1.8.1</sdk-version>
-    <id>com.ethandev.khanacademy</id>
+    <id>com.ethandev.khanarchiver</id>
     <name>KhanAcademy</name>
     <version>1.0</version>
     <publisher>ethantran</publisher>
-    <url>http://ethandev.com/KhanAcademy</url>
+    <url>http://ethandev.com/khan-archiver</url>
     <description>not specified</description>
     <copyright>2012 by ethantran</copyright>
     <icon>appicon.png</icon>
