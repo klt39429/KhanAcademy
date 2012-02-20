@@ -35,10 +35,10 @@ var social_media = ( function() {
 	var _update_facebook = function() {
 	    var data = {
 		    name: _video['title'],
-		    message: 'Check out this awesome educational material',
+		    //message: 'Check out this awesome educational material',
 		    caption: _video['title'],
 		    picture: _video['image_url'],
-		    description: _video['decsription'],
+		    //description: _video['decsription'],
 		    link: _video['ka_url']
 		};
 		

@@ -24,8 +24,8 @@ khan_academy.data_manager = function() {
 			url: 'http://www.khanacademy.org/api/v1/playlists/library/list'};
 			
 		_data_dir = Titanium.Filesystem.applicationDataDirectory;
-		Ti.API.info( _data_dir );
 		_res_dir = Titanium.Filesystem.resourcesDirectory;
+		Ti.API.info( _data_dir );
 
 		// Create data_folder if not exsits
 		_data_folder = _create_data_folder();
@@ -44,8 +44,18 @@ khan_academy.data_manager = function() {
 		_callback_func = callback_func;
 		var file = Titanium.Filesystem.getFile( _data_folder.nativePath, _library['name'] );
 		
-		if ( is_force || !file.exists() ) {
+		if ( is_force ) {
 			_retrieve_data( _library['name'], _library['url'] );
+		}
+		else if ( !file.exists() ) { // copy file from resource folder
+			var res_file = Titanium.Filesystem.getFile( _res_dir, _folder_name + "/" + _library['name'] );
+			var data_file = Titanium.Filesystem.getFile( _data_folder.nativePath , _library['name'] );
+			if (res_file.exists()) {
+  				var content = res_file.read();
+  				data_file.write( content );
+  				_break_into_playlists( content );
+  				_callback_func();
+			}
 		}
 		else {
 			_callback_func();
