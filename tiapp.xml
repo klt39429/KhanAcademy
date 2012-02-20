@@ -9,7 +9,7 @@
     </deployment-targets>
     <sdk-version>1.8.1</sdk-version>
     <id>com.ethandev.khanarchiver</id>
-    <name>KhanAcademy</name>
+    <name>Khan Archiver</name>
     <version>1.0</version>
     <publisher>ethantran</publisher>
     <url>http://ethandev.com/khan-archiver</url>
