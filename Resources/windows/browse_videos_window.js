@@ -50,7 +50,15 @@ khan_academy.browse_videos_window = function() {
 	 */
 	var _video_row_clicked = function( video ) {
 		
-		var video_option = new modal_popup( 0.3, 0.8 );
+		var video_option;
+		
+		if ( Titanium.Platform.osname == 'iphone' ) {
+			video_option = new modal_popup( 0.3, 0.8 );
+		}
+		else if ( Titanium.Platform.osname == 'ipad' ) {
+			video_option = new modal_popup( 0.15, 0.4 );
+		}
+		
 		video_option.init();
 		
 		// Download the movie

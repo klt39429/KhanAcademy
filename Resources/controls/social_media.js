@@ -14,7 +14,13 @@ var social_media = ( function() {
 			url:'https://twitter.com/intent/tweet?' + str
 		});
 	
-		var twitter_popup = new modal_popup( 0.9,1 );
+		var twitter_popup;
+		if ( Titanium.Platform.osname == 'iphone' ) {
+			twitter_popup = new modal_popup( 0.9,1 );
+		}
+		else if ( Titanium.Platform.osname == 'ipad' ) {
+			twitter_popup = new modal_popup( 0.6,0.6 );
+		}
 		twitter_popup.init();
 		twitter_popup.move_close_button_inside();
 		
@@ -103,7 +109,13 @@ var social_media = ( function() {
 		_create_twitter_button();
 		_create_facebook_button();
 		
-		_window_popup = new modal_popup( 0.2, 0.6 );
+		if ( Titanium.Platform.osname == 'iphone' ) {
+			_window_popup = new modal_popup( 0.2, 0.6 );
+		}
+		else if ( Titanium.Platform.osname == 'ipad' ) {
+			_window_popup = new modal_popup( 0.15, 0.25 );
+		}
+		
 		_window_popup.init();
 		
 		_window_popup.add_item( _twitter_button );
