@@ -33,3 +33,22 @@ In archive database, standalone_title is the title of the topic
     views = 1065352;
     "youtube_id" = 9Ek61w1LxSc;
 }
+
+
+>###App Store Icon
+512x512 (scaled to 175x175 for display in the store)
+Include appstore icon in your resources folder.
+>###Application Icon
+appicon@2x.png 114 x 114 (iPhone 4)
+appicon.png 57x57 (older iPhones)
+appicon.png 72x72 (iPad)
+Include both sizes (older and @2x) in your iPhone app. The iPhone will use the @2x automatically on devices with the retina display. This goes for any tab images too. The improvement can be very noticeable.
+>###iPhone splash screen dimensions
+Default@2x.png 640w x 960h (iPhone 4)
+Default.png 320w x 480h (for older iPhones)
+>###iPad splash screen dimensions
+Default-Landscape.png 1024w x 748h
+Default-Portrait.png 768w x 1004h
+Default-PortraitUpsideDown.png 768w x 1004h
+Default-LandscapeLeft.png 1024w x 748h
+Default-LandscapeRight.png 1024w x 748h

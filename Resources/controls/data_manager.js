@@ -23,7 +23,7 @@ khan_academy.data_manager = function() {
 			name: "library.json",
 			url: 'http://www.khanacademy.org/api/v1/playlists/library/list'};
 			
-		_data_dir = Titanium.Filesystem.applicationDataDirectory;
+		_data_dir = Titanium.Filesystem.applicationDataDirectory + "../Library/Caches/";
 		_res_dir = Titanium.Filesystem.resourcesDirectory;
 		Ti.API.info( _data_dir );
 

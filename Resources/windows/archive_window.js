@@ -18,7 +18,7 @@ khan_academy.archive_window = function() {
 		var videos = database.get_videos_by_topic_id( topic_id );
 		for ( var i in videos ) {
 			// remove file from local
-			var video_file = Titanium.Filesystem.getFile( Titanium.Filesystem.applicationDataDirectory, videos[i]['url'] );
+			var video_file = Titanium.Filesystem.getFile( Titanium.Filesystem.applicationDataDirectory + "../Library/Caches/", videos[i]['url'] );
 			if ( video_file.exists() ){
 				video_file.deleteFile();
 			}

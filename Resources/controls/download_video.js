@@ -84,7 +84,7 @@ var download_video = function( video ){
 		
 		_http_client.open('GET',video['download_urls']['mp4']);
 		_http_client.file = Titanium.Filesystem.getFile(
-			Titanium.Filesystem.applicationDataDirectory + video['download_urls']['mp4'].replace(/^.*[\\\/]/, ''));
+			Titanium.Filesystem.applicationDataDirectory + "../Library/Caches/"  + video['download_urls']['mp4'].replace(/^.*[\\\/]/, ''));
 		_http_client.send();		
 				
 		_status = self.STATUS_DOWNLOADING;		

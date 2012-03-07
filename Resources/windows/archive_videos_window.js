@@ -17,7 +17,7 @@ khan_academy.archive_videos_window = function() {
 		database.delete_video_by_url( video_url );
 		
 		// remove file from local
-		var video_file = Titanium.Filesystem.getFile( Titanium.Filesystem.applicationDataDirectory, video_url );
+		var video_file = Titanium.Filesystem.getFile( Titanium.Filesystem.applicationDataDirectory + "../Library/Caches/", video_url );
 		if ( video_file.exists() ){
 			video_file.deleteFile();
 		}
@@ -28,7 +28,7 @@ khan_academy.archive_videos_window = function() {
 	 */
 	var _video_row_clicked = function( video ) {
 		Ti.API.info(video['url']);
-		var pv = new play_video( Titanium.Filesystem.applicationDataDirectory + video['url'] );
+		var pv = new play_video( Titanium.Filesystem.applicationDataDirectory + "../Library/Caches/"  +  video['url'] );
 		pv.init();
 		pv.play();
 	};
