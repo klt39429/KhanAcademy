@@ -1,11 +1,10 @@
-This is an attempt to pull the library from Khan Academy to handy iPhone and users can watch / download videos directly to it. The project is developed using Titanium Appcelerator Mobile SDK.
+Welcome to your Appcelerator Titanium Mobile Project
 
-The playlist/videos info were retrieved and stored as JSON locally as of Februray 1st, 2012 in order to save time pulling the list from the server. A mechanism to update this playlist will be added.
+This is a blank project.  Start by editing your application's app.js to 
+make your first mobile project using Titanium.
 
-This project does not use any 3rd modules so hopefully you can easily pull it down and use as it is.   
 
-Quote from Khan Academy:
-The Khan Academy is an organization on a mission. We're a not-for-profit with the goal of changing education for the better by providing a free world-class education to anyone anywhere.
+
 ----------------------------------
 Stuff our legal folk make us say:
 
@@ -16,3 +15,4 @@ Titanium is Copyright (c) 2009-2010 by Appcelerator, Inc. All Rights Reserved.
 
 Titanium is licensed under the Apache Public License (Version 2). Please
 see the LICENSE file for the full license.
+

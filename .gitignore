@@ -2,4 +2,5 @@ tmp
 build/
 misc/
 .settings/
+.project
 *.log

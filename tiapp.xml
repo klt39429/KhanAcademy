@@ -7,10 +7,10 @@
         <target device="android">false</target>
         <target device="blackberry">false</target>
     </deployment-targets>
-    <sdk-version>1.8.1</sdk-version>
+    <sdk-version>1.8.2</sdk-version>
     <id>com.ethandev.khanarchiver</id>
-    <name>Khan Archiver</name>
-    <version>1.0</version>
+    <name>KhanArchiver_iPhone</name>
+    <version>1.0.1</version>
     <publisher>ethantran</publisher>
     <url>http://ethandev.com/khan-archiver</url>
     <description>not specified</description>
@@ -23,7 +23,7 @@
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-    <guid>f66a8809-3776-402d-b1e3-6a17bb4f4ee0</guid>
+    <guid>0c187784-4ded-4682-b891-5c695b46010a</guid>
     <iphone>
         <orientations device="iphone">
             <orientation>Ti.UI.PORTRAIT</orientation>
