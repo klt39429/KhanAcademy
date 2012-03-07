@@ -39,23 +39,11 @@ var social_media = ( function() {
 	};
 	
 	/*
-	 * Check for authorization and login
+	 * Update Facebook
 	 */
 	var _update_facebook = function() {
 		
-		Titanium.Facebook.addEventListener( 'login', function(e){
-			Titanium.API.info("herE");
-			_perform_facebook_update();
-		});
-		Titanium.Facebook.permissions = ['publish_stream'];
-		Titanium.Facebook.authorize();
-	};
-	
-	/*
-	 * Actual update facebook status
-	 */
-	var _perform_facebook_update = function() {
- 		var data = {
+		var data = {
 		    link: _video['ka_url'],
 		    name: _video['title'],
 		    message: 'Check out this awesome educational material',
@@ -64,14 +52,13 @@ var social_media = ( function() {
 		    description: _video['decsription']
 		};
 		
-		Titanium.Facebook.dialog("feed", data, function(e) {
-			Titanium.Facebook.logout();
-		    if (e.success && 0 == e.cancelled) {
-		        alert("Message uploaded successfully on Facebook");
-		    } 
-		    else if (e.error) {
-				alert(e.error);
-		    }
+		Titanium.Facebook.dialog( "feed", data, function(e) {
+    		if ( e.success ) {
+				alert( "Message uploaded successfully on Facebook");
+    		}
+    		else if ( e.error ){
+    			alert( "Something went wrong. Please try it again");
+    		}
 		});		
 	};
 	
