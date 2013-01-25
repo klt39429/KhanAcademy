@@ -20,14 +20,16 @@ khan_academy.archive_videos_window = function() {
 			}
 
 			for (i=0; i<playlist_info.videos.length; i++) {
-				if (!playlist_info.videos[i].hasOwnProperty('youtube_id')) continue;
-
-				youtube_id = playlist_info.videos[i].youtube_id;
+				youtube_id = playlist_info.videos[i].youtube_id || '';
 				if (videos_by_id.hasOwnProperty(youtube_id)) {
 					sorted_videos.push(videos_by_id[youtube_id]);
 					delete videos_by_id[youtube_id];
 				}
 			}
+			for (var i in videos_by_id) {
+				sorted_videos.push(videos_by_id[i]);
+			}
+
 			return sorted_videos;
 		} catch(err) {
 			return videos;
