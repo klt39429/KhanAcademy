@@ -7,10 +7,10 @@
         <target device="android">false</target>
         <target device="blackberry">false</target>
     </deployment-targets>
-    <sdk-version>1.8.2</sdk-version>
+    <sdk-version>3.0.0.GA</sdk-version>
     <id>com.ethandev.khanarchiver</id>
-    <name>KhanArchiver_iPhone</name>
-    <version>1.0.1</version>
+    <name>Khan Archiver</name>
+    <version>1.0.2</version>
     <publisher>ethantran</publisher>
     <url>http://ethandev.com/khan-archiver</url>
     <description>not specified</description>

@@ -4,3 +4,4 @@ misc/
 .settings/
 .project
 *.log
+*.mobileprovision
