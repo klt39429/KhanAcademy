@@ -96,11 +96,11 @@ khan_academy.data_manager = function() {
 		}
 		
 		// write playlist info file
-		var playlist_file = Titanium.Filesystem.getFile( _data_folder.nativePath, _playlist['name'] );
+		var playlist_file = Titanium.Filesystem.getFile( _data_folder.nativePath, _playlist.name );
 		playlist_file.write( JSON.stringify(playlists_info), false);
 		
 		_activity_indicator.close();
-	}
+	};
 		
 	/*
 	 * Get files from API to Application Data folder
@@ -121,10 +121,10 @@ khan_academy.data_manager = function() {
 			},
 			onerror: function( result ) {
 				_activity_indicator.close();
-				alert( result );
+				alert( 'Error retrieving data' );
 				_callback_func();
 			}
-		}
+		};
 
 		// send request to Khan
 		var sc = new server_call( file_url, null, call_back_obj );

@@ -79,7 +79,7 @@ var download_video = function( video ){
 		
 		_http_client.onerror = function(e)
 		{
-			Ti.UI.createAlertDialog({title:'XHR', message:'Error: ' + e.error}).show();
+			Ti.UI.createAlertDialog({title:'Error', message:'The connection is lost.'}).show();
 		};
 		
 		_http_client.open('GET',video['download_urls']['mp4']);

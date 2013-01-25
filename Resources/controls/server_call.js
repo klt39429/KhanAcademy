@@ -26,13 +26,13 @@ var server_call = function( url, postdata, call_back_obj ) {
 		
 		xhr.onerror = function(e) 
 		{
-			if ((null != xhr.call_back_obj) && (null != xhr.call_back_obj.onerror))
+			if ((null !== xhr.call_back_obj) && (null !== xhr.call_back_obj.onerror))
 			{
 				xhr.call_back_obj.onerror(xhr.responseText);
 			}
 			else
 			{
-				alert(xhr.responseText);
+				alert('Error retrieving data');
 			}
 		};
 		
