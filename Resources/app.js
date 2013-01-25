@@ -1,4 +1,5 @@
 khan_academy = {};
+Titanium.UI.iPhone.statusBarStyle = Titanium.UI.iPhone.StatusBar.TRANSLUCENT_BLACK;
 
 Ti.include( "controls/include.js" );
 Ti.include( "windows/include.js" );

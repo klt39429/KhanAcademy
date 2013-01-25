@@ -8,6 +8,7 @@ var play_video = function( video ) {
 		// Close the pop up window, add the player to current window and play it
 		_window.add( _player );
 		_window.open(); 
+		Titanium.Media.audioSessionMode = Ti.Media.AUDIO_SESSION_MODE_PLAYBACK;
 		_player.play();	
 	};
 	
@@ -16,11 +17,11 @@ var play_video = function( video ) {
 		_window = '';
 		_window = Titanium.UI.createWindow({
 			orientationModes: [Titanium.UI.PORTRAIT,
-			    Titanium.UI.UPSIDE_PORTRAIT,
-			    Titanium.UI.LANDSCAPE_LEFT,
-			    Titanium.UI.LANDSCAPE_RIGHT,
-			    Titanium.UI.FACE_UP,
-			    Titanium.UI.FACE_DOWN]
+				Titanium.UI.UPSIDE_PORTRAIT,
+				Titanium.UI.LANDSCAPE_LEFT,
+				Titanium.UI.LANDSCAPE_RIGHT,
+				Titanium.UI.FACE_UP,
+				Titanium.UI.FACE_DOWN]
 		});
 		
 		// Create the player
@@ -28,20 +29,19 @@ var play_video = function( video ) {
 			backgroundColor:'#000',
 			autoplay:true,
 			fullscreen:true,
-			movieControlMode:Titanium.Media.VIDEO_CONTROL_EMBEDDED,
+			mediaControlStyle : Titanium.Media.VIDEO_CONTROL_DEFAULT,
 			url: video
 		});
 		
 		// Close window after playback is completed
-        _player.addEventListener( 'fullscreen', function(e) { // When fullscreen status is changed.
-        	Ti.API.info( "fullscreen mode changed" );
-            if ( false == e.entering ) { // User pressed 'done' or video finished.
-                _player.stop();
-                _window.close();
-                delete _self;
-            }
-        });
-	}
+		_player.addEventListener( 'fullscreen', function(e) { // When fullscreen status is changed.
+			if ( false === e.entering ) { // User pressed 'done' or video finished.
+				_player.stop();
+				_window.close();
+				delete _self;
+			}
+		});
+	};
 	
 	return {// publicly accessible API
 		init: function() {
