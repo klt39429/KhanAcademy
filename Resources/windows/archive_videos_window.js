@@ -2,9 +2,38 @@ khan_academy.archive_videos_window = function() {
 
 	var _window = '', _tableview = '', _edit_button, _cancel_button, _searchbar;
 	
+	/*
+	 * Get a list of videos from this playlist
+	 * Sort it according to the library order
+	 */
 	var _get_playlist_info = function( playlist_id ) {
-		return database.get_videos_by_topic_id( playlist_id );
-	}
+		var playlist_info = my_app.data_manager.get_playlist_info( playlist_id ),
+			videos = database.get_videos_by_topic_id( playlist_id ),
+			videos_by_id = {},
+			sorted_videos = [],
+			youtube_id = '';
+
+		// Try to sort the videos;
+		try {
+			for (i=0; i<videos.length; i++) {
+				videos_by_id[videos[i].id] = videos[i];
+			}
+
+			for (i=0; i<playlist_info.videos.length; i++) {
+				if (!playlist_info.videos[i].hasOwnProperty('youtube_id')) continue;
+
+				youtube_id = playlist_info.videos[i].youtube_id;
+				if (videos_by_id.hasOwnProperty(youtube_id)) {
+					sorted_videos.push(videos_by_id[youtube_id]);
+					delete videos_by_id[youtube_id];
+				}
+			}
+			return sorted_videos;
+		} catch(err) {
+			return videos;
+		}
+
+	};
 
 	/*
 	 * Delete a row from table:
