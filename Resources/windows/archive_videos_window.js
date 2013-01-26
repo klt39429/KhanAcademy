@@ -90,8 +90,8 @@ khan_academy.archive_videos_window = function() {
 			});
 			row.add(label);
 			
-			row.addEventListener('click', function(){
-				if ( false == row.hasChild ) {
+			row.addEventListener('singletap', function(){
+				if ( false === row.hasChild ) {
 					alert( "This section does not have any videos" );
 				}
 				else {
