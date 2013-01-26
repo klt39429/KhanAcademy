@@ -195,7 +195,13 @@ khan_academy.browse_videos_window = function() {
 			systemButton:Titanium.UI.iPhone.SystemButton.ORGANIZE
 		});
 
-		download_all.addEventListener('click', _download_all);
+		download_all.addEventListener('click', function() {
+			utils.confirm_message('Download All', 'Are you sure that you want to download all videos in this topic?', function() {
+				for ( var i in playlist_info.videos ) {
+					_download_video( playlist_info.videos[i] );
+				}
+			});
+		});
 
 		return download_all;
 	};
@@ -224,29 +230,6 @@ khan_academy.browse_videos_window = function() {
 		_update_tableview( playlist_info );
 	};
 
-	/*
-	 * Download all confirm
-	 */
-	var _download_all = function() {
-		var alert = Titanium.UI.createAlertDialog({
-			title: 'Download All',
-			message: 'Are you sure that you want to download all videos in this topic?',
-			buttonNames: ['No', 'Yes']
-		});
-	 
-		alert.addEventListener('click', function(e) {
-			// Click on YES, make a call back
-			if ( 1 === e.index ) {
-				for ( var i in playlist_info.videos ) {
-					_download_video( playlist_info.videos[i] );
-				}
-			}
-		});
-	 
-		alert.show();
-	};
-	
-	
 	return {// publicly accessible API
 
 		init : function() {
