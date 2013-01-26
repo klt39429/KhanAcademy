@@ -1,6 +1,6 @@
 khan_academy.browse_videos_window = function() {
 
-	var _window, _tableview, _searchbar;
+	var _window, _tableview, _searchbar, playlists_info;
 	
 	var _get_playlist_info = function( playlist_id ) {
 		return my_app.data_manager.get_playlist_info( playlist_id ); 
@@ -45,6 +45,32 @@ khan_academy.browse_videos_window = function() {
 		return section;
 	}
 
+	/* 
+	 * Download single video
+	 */
+	var _download_video = function( video ) {
+		// Set badge
+		var download_tab = my_app.main_window.get_tabgroup().tabs[2];
+		if ( null === download_tab.badge ) {
+			download_tab.setBadge( 1 );
+		}
+		else {
+			download_tab.setBadge( download_tab.badge + 1 );
+		}
+		
+		// Set download window
+		var dlv = new download_video( video );
+		dlv.init();
+		
+		var tableview = my_app.download_window.get_tableview();
+		if ( tableview.data.length === 0 ) {
+			tableview.appendRow( dlv.get_row() );
+		}
+		else {
+			tableview.insertRowBefore( 0, dlv.get_row() );
+		}
+	};
+
 	/*
 	 * Show options to WATCH or DOWNLOAD
 	 */
@@ -71,28 +97,7 @@ khan_academy.browse_videos_window = function() {
 			'top' : 20
 		});
 		download_button.addEventListener( 'click', function() {
-			
-			// Set badge
-			var download_tab = my_app.main_window.get_tabgroup().tabs[2];
-			if ( null == download_tab.badge ) {
-				download_tab.setBadge( 1 );
-			}
-			else {
-				download_tab.setBadge( download_tab.badge + 1 );
-			}
-			
-			// Set download window
-			var dlv = new download_video( video );
-			dlv.init();
-			
-			var tableview = my_app.download_window.get_tableview();
-			if ( tableview.data.length == 0 ) {
-				tableview.appendRow( dlv.get_row() );
-			}
-			else {
-				tableview.insertRowBefore( 0, dlv.get_row() );
-			}
-			
+			_download_video( video );			
 			video_option.close();
 		});
 
@@ -183,7 +188,17 @@ khan_academy.browse_videos_window = function() {
 			 _table_header_section( playlist_info ),
 			 _table_content_section( playlist_info )	
 		]);
-	}
+	};
+
+	var _create_download_all_button = function() {
+		var download_all = Titanium.UI.createButton({
+			systemButton:Titanium.UI.iPhone.SystemButton.ORGANIZE
+		});
+
+		download_all.addEventListener('click', _download_all);
+
+		return download_all;
+	};
 
 	var _init = function() {
 		_window = control_factory.create_window({
@@ -198,15 +213,39 @@ khan_academy.browse_videos_window = function() {
 			searchHidden: true,
 			filterAttribute: 'filter'
 		});
+		_window.setRightNavButton(_create_download_all_button());
 		_window.add(_tableview);
 	};
 	
 	var _update = function( playlist_id ) {
-		var playlist_info = _get_playlist_info( playlist_id );
+		playlist_info = _get_playlist_info( playlist_id );
 		
-		_window.setTitle( playlist_info['standalone_title'] );
+		_window.setTitle( playlist_info.standalone_title );
 		_update_tableview( playlist_info );
-	}
+	};
+
+	/*
+	 * Download all confirm
+	 */
+	var _download_all = function() {
+		var alert = Titanium.UI.createAlertDialog({
+			title: 'Download All',
+			message: 'Are you sure that you want to download all videos in this topic?',
+			buttonNames: ['No', 'Yes']
+		});
+	 
+		alert.addEventListener('click', function(e) {
+			// Click on YES, make a call back
+			if ( 1 === e.index ) {
+				for ( var i in playlist_info.videos ) {
+					_download_video( playlist_info.videos[i] );
+				}
+			}
+		});
+	 
+		alert.show();
+	};
+	
 	
 	return {// publicly accessible API
 
