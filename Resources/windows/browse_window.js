@@ -48,7 +48,9 @@ khan_academy.browse_window = function() {
 			systemButton : Titanium.UI.iPhone.SystemButton.REFRESH
 		});
 		_refresh_button.addEventListener( 'click', function(){
-			my_app.data_manager.try_retrieve_data( _update_tableview, true );	
+			utils.confirm_message('Refresh Library', 'This will override the current library and may cause mismatched videos. Are you sure?', function() {
+				my_app.data_manager.try_retrieve_data( _update_tableview, true );	
+			});
 		});
 	};
 
