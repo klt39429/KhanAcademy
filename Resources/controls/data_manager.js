@@ -87,6 +87,8 @@ khan_academy.data_manager = function() {
 		
 		
 		for ( var i in lib_data ) {
+			if ( !lib_data[i].hasOwnProperty('videos') ) continue;
+
 			var topic_file = Titanium.Filesystem.getFile( _data_folder.nativePath, lib_data[i]['id'] + ".json" );
 			topic_file.write( JSON.stringify(lib_data[i]), false);
 			
