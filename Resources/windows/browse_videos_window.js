@@ -151,7 +151,7 @@ khan_academy.browse_videos_window = function() {
 			});
 			row.add(label);
 			
-			row.addEventListener('click', function(){
+			row.addEventListener('singletap', function(){
 				if ( false == row.hasChild ) {
 					alert( "This section does not have any videos" );
 				}
