@@ -1,10 +1,13 @@
 khan_academy.browse_window = function() {
 
-	var _window, _tableview, _searchbar, _refresh_button;
+	var _window, _searchbar, _refresh_button;
+
+	// these variables are responsible for building the table index and scrollbar
+	var _tableview, _tbindex , _last_char_code;
 	
 	var _get_playlists = function() {
 		return my_app.data_manager.get_all_playlists();
-	}
+	};
 
 	var _open_browse_videos_window = function( playlist_id ){
 		my_app.activity_indicator.open();
@@ -13,10 +16,10 @@ khan_academy.browse_window = function() {
 		my_app.activity_indicator.close();
 	};
 
-	var _create_tableview_row = function( playlist ) {
+	var _create_tableview_row = function( playlist, inx ) {
 		// Create row
 		var label = Titanium.UI.createLabel({
-			text: playlist['standalone_title'],
+			text: playlist.standalone_title,
 			height: 'auto',
 			font: {
 				fontSize: 18,
@@ -27,16 +30,31 @@ khan_academy.browse_window = function() {
 			left: 10,
 			right: 20
 		});
+
+		//
+		// Get title header
+		//
+		var this_char_code = playlist.standalone_title.toUpperCase().charCodeAt(0);
+		if ( this_char_code < 65 || this_char_code > 90 ) this_char_code = 35;
+
 		var row = Titanium.UI.createTableViewRow({
 			height: 'auto',
 			hasChild: true,
-			playlist_id: playlist['id'],
-			filter: playlist['standalone_title'] + " " + playlist['description'] + " " + playlist['tags'].join(" ")
+			playlist_id: playlist.id,
+			filter: playlist.standalone_title + " " + playlist.description + " " + playlist.tags.join(" ")
 		});
+		if ( this_char_code !== _last_char_code ) {
+			row.header = String.fromCharCode( this_char_code );
+			_tbindex.push({
+				title: String.fromCharCode( this_char_code ),
+				index: inx
+			});
+		}
+		_last_char_code = this_char_code;
 		
 		// on row click, open browse videos window
 		row.addEventListener('click', function() {
-			_open_browse_videos_window( playlist['id'] );
+			_open_browse_videos_window( playlist['id'] )
 		});
 		
 		row.add(label);		
@@ -58,13 +76,15 @@ khan_academy.browse_window = function() {
 		
 		var playlists = _get_playlists();
 		if ( null !== playlists ) {
+			_last_char_code = -1;
+			_tbindex = [];
 			var rows = [];
-			for ( i in playlists ) {
-				rows.push( _create_tableview_row(playlists[i]) );
+			for ( var i in playlists ) {
+				rows.push( _create_tableview_row(playlists[i], i) );
 			}
 						
-			// Update TableViews
 			_tableview.setData( rows );
+			_tableview.setIndex(_tbindex);
 		}
 	};
 

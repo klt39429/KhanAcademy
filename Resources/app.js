@@ -5,6 +5,8 @@ Ti.include( "controls/include.js" );
 Ti.include( "windows/include.js" );
 Ti.include( "utils.js" );
 
+var _ = require('controls/underscore')._;
+
 my_app = {
 	
 	// additional view

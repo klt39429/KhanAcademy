@@ -68,7 +68,7 @@ khan_academy.data_manager = function() {
 	var _create_data_folder = function() {
 		var data_folder = Titanium.Filesystem.getFile( _data_dir, _folder_name );
 		if( !data_folder.exists() ){
-  			data_folder.createDirectory();
+			data_folder.createDirectory();
 		}
 		
 		return Titanium.Filesystem.getFile( _data_dir, _folder_name );
@@ -85,20 +85,23 @@ khan_academy.data_manager = function() {
 		var lib_data = JSON.parse( library_text );
 		var playlists_info = [];
 		
-		
 		for ( var i in lib_data ) {
 			if ( !lib_data[i].hasOwnProperty('videos') ) continue;
 
-			var topic_file = Titanium.Filesystem.getFile( _data_folder.nativePath, lib_data[i]['id'] + ".json" );
+			var topic_file = Titanium.Filesystem.getFile( _data_folder.nativePath, lib_data[i].id + ".json" );
 			topic_file.write( JSON.stringify(lib_data[i]), false);
 			
 			// Push playlist info only to create playlist file
-			delete lib_data[i]['videos'];
+			delete lib_data[i].videos;
+			lib_data[i].standalone_title = lib_data[i].standalone_title.toCamelCase();
 			playlists_info.push(lib_data[i]);
 		}
 		
 		// write playlist info file
 		var playlist_file = Titanium.Filesystem.getFile( _data_folder.nativePath, _playlist.name );
+		playlists_info = _.sortBy(playlists_info, function(pl) {
+			return pl.standalone_title.toUpperCase();
+		});
 		playlist_file.write( JSON.stringify(playlists_info), false);
 		
 		_activity_indicator.close();

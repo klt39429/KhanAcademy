@@ -35,3 +35,6 @@ utils.confirm_message = function(title, message, callback) {
 	alert.show();
 };
 
+String.prototype.toCamelCase = function () {
+	return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+};
