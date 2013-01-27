@@ -28,7 +28,7 @@ khan_academy.information_window = function() {
 			color: '#445555',
 			value: text
 		});
-		label.autoLink = Titanium.UI.AUTODETECT_ALL;
+		label.autoLink = Ti.UI.AUTOLINK_ALL;
 		row.add(label);
 		return row;
 	};
