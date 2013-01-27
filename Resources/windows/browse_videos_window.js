@@ -3,7 +3,8 @@ khan_academy.browse_videos_window = function() {
 	var _window, _tableview, _searchbar, playlists_info;
 	
 	var _get_playlist_info = function( playlist_id ) {
-		return my_app.data_manager.get_playlist_info( playlist_id ); 
+		var playlist = my_app.data_manager.get_playlist_info( playlist_id ); 
+		return playlist;
 	}
 
 	var _table_header_section = function( playlist_info ) {
@@ -123,7 +124,7 @@ khan_academy.browse_videos_window = function() {
 		video_option.open();
 	};
 
-	var _table_content_section = function( playlist_info ) {
+	var _table_content_section = function( playlist_info, downloaded_videos ) {
 		
 		var _create_content_row = function( video ) {
 			// append topic information
@@ -142,6 +143,7 @@ khan_academy.browse_videos_window = function() {
 				bottom: 10,
 				left: 10,
 				right: 20,
+				color: (downloaded_videos.indexOf( video.youtube_id ) === -1) ? 'black' : 'blue',
 				className: 'browse-video'
 			});
 			var row = Titanium.UI.createTableViewRow({
@@ -184,10 +186,10 @@ khan_academy.browse_videos_window = function() {
 		return section;
 	}
 
-	var _update_tableview = function( playlist_info ) {
+	var _update_tableview = function( playlist_info, downloaded_videos ) {
 		_tableview.setData([
 			_table_header_section( playlist_info ),
-			_table_content_section( playlist_info )	
+			_table_content_section( playlist_info, downloaded_videos )	
 		]);
 	};
 
@@ -226,9 +228,11 @@ khan_academy.browse_videos_window = function() {
 	
 	var _update = function( playlist_id ) {
 		playlist_info = _get_playlist_info( playlist_id );
+		var downloaded_videos = database.get_videos_by_topic_id( playlist_id );
+		downloaded_videos = _.pluck(downloaded_videos, 'id');
 		
 		_window.setTitle( playlist_info.standalone_title.toCamelCase() );
-		_update_tableview( playlist_info );
+		_update_tableview( playlist_info, downloaded_videos );
 	};
 
 	return {// publicly accessible API
