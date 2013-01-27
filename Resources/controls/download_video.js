@@ -54,12 +54,13 @@ var download_video = function( video ){
 			_label_progress.text = "Download Completed";
 			_size_label = Titanium.UI.createLabel({
 				text: 'Size: ' + _get_size_format( _http_client.getResponseHeader('Content-Length') ),
-				top: _label_progress.top - 20,
-				left: _label_progress.left,
-				height: _label_progress.height,
-				font: _label_progress.font
+				left: 5,
+				color: '#445555',
+				font: _label_progress.font,
+				top: 10
 			});
-			_row.add( _size_label );
+			_indicator.getParent().remove(_indicator);
+			_indicator.getParent().add( _size_label );
 			
 			_status = self.STATUS_COMPLETED;
 
@@ -139,38 +140,49 @@ var download_video = function( video ){
 			width: 114
 		});
 		image_outside_view.add( _image );
-		_row.add( image_outside_view );
 		
 		_title = Titanium.UI.createLabel({
 			text: video['title'],
 			top: 10,
-			left: 130,
+			left: 5,
 			height: 15,
 			font:{fontSize:13, fontWeight:'bold'},
 		});
-		_row.add( _title );
 		
 		_indicator = Titanium.UI.createProgressBar({
-			width:150,
+			width:160,
 			min:0,
 			max:1,
 			value:0,
 			style:Titanium.UI.iPhone.ProgressBarStyle.PLAIN,
-			top:0,
-			left: 130,
+			top:10,
+			left: 5,
 		});
-		_row.add( _indicator );
 		_indicator.show();
 		
 		_label_progress = Titanium.UI.createLabel({
 			text: "",
-			top: 50,
-			left: 130,
+			color: '#445555',
+			top: 10,
+			left: 5,
 			height: 15,
 			font:{fontSize:11, fontWeight:'normal'},			
 		});
-		_row.add( _label_progress );
 		
+
+		var _right_view = Ti.UI.createView({
+			left: 120,
+			layout: 'vertical',
+			right: 0,
+			height: 80
+		});
+		_right_view.add( _title );
+		_right_view.add( _indicator );
+		_right_view.add( _label_progress );
+
+		_row.add( image_outside_view );
+		_row.add( _right_view );
+
 		_row.addEventListener( 'click', function() {
 			if ( self.STATUS_DOWNLOADING == _status ) {
 				_pause_download();

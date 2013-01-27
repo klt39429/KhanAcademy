@@ -9,14 +9,14 @@ khan_academy.browse_videos_window = function() {
 	var _table_header_section = function( playlist_info ) {
 
 		var header_label = Titanium.UI.createLabel({
-			text: playlist_info['standalone_title'],
+			text: playlist_info.standalone_title.toCamelCase(),
 			height: 'auto',
 			font: {
 				fontSize: 14,
 				fontWeight: 'bold'
 			},
-			color: 'red',
-			top: 8,
+			color: '#C04C80',
+			top: 5,
 			left: 10,
 			width: 270
 		});
@@ -27,14 +27,15 @@ khan_academy.browse_videos_window = function() {
 			font: {
 				fontSize: 12
 			},
-			top: 10 + header_label.height,
+			color: '#445555',
 			left: 20,
 			width: 260,
 			bottom: 10
 		});
 		
 		var row = Titanium.UI.createTableViewRow({
-			height: 'auto'
+			height: 'auto',
+			layout: 'vertical'
 		})
 		row.add(header_label);
 		row.add(content_label);
@@ -185,8 +186,8 @@ khan_academy.browse_videos_window = function() {
 
 	var _update_tableview = function( playlist_info ) {
 		_tableview.setData([
-			 _table_header_section( playlist_info ),
-			 _table_content_section( playlist_info )	
+			_table_header_section( playlist_info ),
+			_table_content_section( playlist_info )	
 		]);
 	};
 
@@ -226,7 +227,7 @@ khan_academy.browse_videos_window = function() {
 	var _update = function( playlist_id ) {
 		playlist_info = _get_playlist_info( playlist_id );
 		
-		_window.setTitle( playlist_info.standalone_title );
+		_window.setTitle( playlist_info.standalone_title.toCamelCase() );
 		_update_tableview( playlist_info );
 	};
 

@@ -7,13 +7,15 @@ khan_academy.archive_videos_window = function() {
 	 * Sort it according to the library order
 	 */
 	var _get_playlist_info = function( playlist_id ) {
-		var playlist_info = my_app.data_manager.get_playlist_info( playlist_id ),
+		var playlist_info = my_app.data_manager.get_playlist_info( playlist_id ) || {standalone_title:playlist_id.toCamelCase()},
 			videos = database.get_videos_by_topic_id( playlist_id ),
 			videos_by_id = {},
 			sorted_videos = [],
 			youtube_id = '';
 
+		//
 		// Try to sort the videos;
+		//
 		try {
 			for (i=0; i<videos.length; i++) {
 				videos_by_id[videos[i].id] = videos[i];
@@ -30,11 +32,52 @@ khan_academy.archive_videos_window = function() {
 				sorted_videos.push(videos_by_id[i]);
 			}
 
-			return sorted_videos;
+			playlist_info.videos = sorted_videos;
 		} catch(err) {
-			return videos;
+			playlist_info.videos = videos;
 		}
+		return playlist_info;
 
+	};
+
+	var _table_header_section = function( playlist_info ) {
+
+		var header_label = Titanium.UI.createLabel({
+			text: playlist_info['standalone_title'],
+			height: 'auto',
+			font: {
+				fontSize: 14,
+				fontWeight: 'bold'
+			},
+			color: '#C04C80',
+			top: 5,
+			left: 10,
+			width: 270
+		});
+		
+		var content_label = Titanium.UI.createLabel({
+			text: playlist_info['description'],
+			height: 'auto',
+			font: {
+				fontSize: 12
+			},
+			color: '#445555',
+			left: 20,
+			width: 260,
+			bottom: 10
+		});
+		
+		var row = Titanium.UI.createTableViewRow({
+			height: 'auto',
+			layout: 'vertical'
+		})
+		row.add(header_label);
+		row.add(content_label);
+		
+		var section = Titanium.UI.createTableViewSection();
+		section.add(row);		
+		
+		return section;
 	};
 
 	/*
@@ -117,9 +160,10 @@ khan_academy.archive_videos_window = function() {
 
 	var _update_tableview = function( playlist_info ) {
 		_tableview.setData([
-			 _table_content_section( playlist_info )	
+			_table_header_section( playlist_info ),
+			_table_content_section( playlist_info.videos )
 		]);
-	}
+	};
 
 	var _create_tableview = function() {
 		_tableview = Titanium.UI.createTableView({
@@ -152,7 +196,7 @@ khan_academy.archive_videos_window = function() {
 	var _update = function( playlist_id ) {
 		var playlist_info = _get_playlist_info( playlist_id );
 		
-		_window.setTitle( playlist_info[0]['standalone_title'] );
+		_window.setTitle( playlist_info.standalone_title.toCamelCase() );
 		_update_tableview( playlist_info );
 	}
 	
