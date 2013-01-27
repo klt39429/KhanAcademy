@@ -1,19 +1,19 @@
 khan_academy.archive_window = function() {
 
-	var _window, _tableview, _refresh_button, _edit_button, _cancel_button;
+	var _window, _refresh_button, _edit_button, _cancel_button;
+	var _tableview, _tbindex, _last_char_code;
 	
 	var _get_playlists = function() {
 		return database.get_topics();
-	}
+	};
 
 	/*
 	 * Delete a row from table:
-	 * 		remove it from sqllite3
-	 * 		delete all files
+	 *     remove it from sqllite3
+	 *     delete all files
 	 * @input: topic_id
 	 */
 	var _remove = function( topic_id ) {
-		Ti.API.info( topic_id );
 		// Select all records in table to delete local files
 		var videos = database.get_videos_by_topic_id( topic_id );
 		for ( var i in videos ) {
@@ -33,7 +33,7 @@ khan_academy.archive_window = function() {
 		my_app.activity_indicator.close();
 	};
 
-	var _create_tableview_row = function( playlist ) {
+	var _create_tableview_row = function( playlist, inx ) {
 		// Create row
 		var label = Titanium.UI.createLabel({
 			text: playlist['standalone_title'],
@@ -47,13 +47,32 @@ khan_academy.archive_window = function() {
 			left: 10,
 			right: 20
 		});
+
+		//
+		// Get title header
+		//
+		var this_char_code = playlist.standalone_title.toUpperCase().charCodeAt(0);
+		if ( this_char_code < 65 || this_char_code > 90 ) this_char_code = 35;
+
 		var row = Titanium.UI.createTableViewRow({
 			height: 'auto',
 			hasChild: true,
-			topic_id: playlist['topic_id'],
-			filter: playlist['standalone_title'],
+			topic_id: playlist.topic_id,
+			filter: playlist.standalone_title,
 			remove_topic: _remove
 		});
+
+		//
+		// Set index
+		//
+		if ( this_char_code !== _last_char_code ) {
+			row.header = String.fromCharCode( this_char_code );
+			_tbindex.push({
+				title: String.fromCharCode( this_char_code ),
+				index: inx
+			});
+		}
+		_last_char_code = this_char_code;
 		
 		// on row click, open browse videos window
 		row.addEventListener('click', function() {
@@ -70,12 +89,15 @@ khan_academy.archive_window = function() {
 		
 		if ( null !== playlists ) {
 			var rows = [];
-			for ( i in playlists ) {
-				rows.push( _create_tableview_row(playlists[i]) );
+			_tbindex = [];
+			_last_char_code = -1;
+			for (var i in playlists) {
+				rows.push( _create_tableview_row(playlists[i], i) );
 			}
 						
 			// Update TableViews
 			_tableview.setData( rows );
+			_tableview.setIndex(_tbindex);
 		}
 	}
 

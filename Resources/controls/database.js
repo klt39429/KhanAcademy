@@ -53,10 +53,14 @@ var database = ( function() {
 		while ( _rows.isValidRow() ) {
 			topics.push({
 				'topic_id' : _rows.fieldByName( 'topic_id' ),
-				'standalone_title' : _rows.fieldByName( 'standalone_title' )
+				'standalone_title' : (_rows.fieldByName( 'standalone_title' )).toCamelCase()
 			});
 			_rows.next();
 		} 
+
+		topics = _.sortBy(topics, function(topic) {
+			return topic.standalone_title.toUpperCase();
+		});
 	
 		_rows.close();
 		_close();

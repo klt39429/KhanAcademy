@@ -43,7 +43,7 @@ khan_academy.archive_videos_window = function() {
 	var _table_header_section = function( playlist_info ) {
 
 		var header_label = Titanium.UI.createLabel({
-			text: playlist_info['standalone_title'],
+			text: playlist_info.standalone_title.toCamelCase(),
 			height: 'auto',
 			font: {
 				fontSize: 14,
