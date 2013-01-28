@@ -17,10 +17,12 @@ my_app = {
 	browse_window: new khan_academy.browse_window(),
 	archive_window: new khan_academy.archive_window(),
 	information_window: new khan_academy.information_window(),
+	education_window: new khan_academy.education_window(),
 	
 	// subsequently loaded window
 	browse_videos_window: new khan_academy.browse_videos_window(),
 	archive_videos_window: new khan_academy.archive_videos_window(),
+	search_result_window: new khan_academy.search_result_window(),
 	
 	// the main window with tab group
 	main_window : new khan_academy.main_window(),
@@ -37,9 +39,11 @@ var init_windows = function(){
 	my_app.browse_window.init();
 	my_app.archive_window.init();
 	my_app.information_window.init();
+	my_app.education_window.init();
 	
 	my_app.browse_videos_window.init();
 	my_app.archive_videos_window.init();
+	my_app.search_result_window.init();
 	
 	my_app.main_window.init();	
 };

@@ -34,7 +34,14 @@ khan_academy.main_window = function() {
 			window : my_app.information_window.get_window()
 		});
 		_tabgroup.addTab(tab4);
-	}
+
+		var tab5 = Titanium.UI.createTab({
+			//icon : '/images/info.png',
+			title : 'Education',
+			window : my_app.education_window.get_window()
+		});
+		_tabgroup.addTab(tab5);
+	};
 
 	var _init = function() {
 		_window = control_factory.create_window({

@@ -4,4 +4,6 @@ Ti.include( "download_window.js" );
 Ti.include( "information_window.js" );
 Ti.include( "browse_videos_window.js" );
 Ti.include( "archive_videos_window.js" );
+Ti.include( "education_window.js" );
+Ti.include( "search_result_window.js" );
 Ti.include( "main_window.js" );
