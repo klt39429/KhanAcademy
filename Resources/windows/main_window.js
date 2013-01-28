@@ -29,16 +29,16 @@ khan_academy.main_window = function() {
 		_tabgroup.addTab(tab3);
 
 		var tab4 = Titanium.UI.createTab({
-			icon : '/images/info.png',
-			title : 'Information',
-			window : my_app.information_window.get_window()
+			icon : '/images/education.png',
+			title : 'Education',
+			window : my_app.education_window.get_window()
 		});
 		_tabgroup.addTab(tab4);
 
 		var tab5 = Titanium.UI.createTab({
-			//icon : '/images/info.png',
-			title : 'Education',
-			window : my_app.education_window.get_window()
+			icon : '/images/info.png',
+			title : 'Information',
+			window : my_app.information_window.get_window()
 		});
 		_tabgroup.addTab(tab5);
 	};

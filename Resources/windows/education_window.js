@@ -17,7 +17,7 @@ khan_academy.education_window = function() {
 		my_app.activity_indicator.open();
 		var data = _get_data();
 		my_app.search_result_window.update( data );
-		my_app.main_window.get_tabgroup().tabs[4].open(my_app.search_result_window.get_window());
+		my_app.main_window.get_tabgroup().tabs[3].open(my_app.search_result_window.get_window());
 		my_app.activity_indicator.close();
 	};
 
