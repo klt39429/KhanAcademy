@@ -15,7 +15,7 @@
     <url>http://ethandev.com/khan-archiver</url>
     <description>not specified</description>
     <copyright>2012 by ethantran</copyright>
-    <icon>appicon.png</icon>
+	<icon>Icon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
     <statusbar-style>default</statusbar-style>
