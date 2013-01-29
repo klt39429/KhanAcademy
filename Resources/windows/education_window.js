@@ -30,8 +30,11 @@ khan_academy.education_window = function() {
 
 		_search_button = Ti.UI.createButton({
 			'title' : 'Search',
-			'left' : '30',
-			'right' : '30'
+			'height' : '35',
+			'width': '200',
+			backgroundImage: '/images/btn_bg.png',
+			color: '#C04C80',
+			font: {fontSize: 18, fontWeight: 'bold'}
 		});
 		_search_button.addEventListener('click', _load_search);
 

@@ -96,7 +96,10 @@ khan_academy.browse_videos_window = function() {
 			'right' : 'auto',
 			'width' : 200,
 			'height': 40,
-			'top' : 20
+			'top' : 20,
+			backgroundImage: '/images/btn_bg.png',
+			color: '#C04C80',
+			font: {fontSize: 18, fontWeight: 'bold'}
 		});
 		download_button.addEventListener( 'click', function() {
 			_download_video( video );			
@@ -110,7 +113,10 @@ khan_academy.browse_videos_window = function() {
 			'right' : 'auto',
 			'width' : 200,
 			'height': 40,
-			'bottom' : 20
+			'bottom' : 20,
+			backgroundImage: '/images/btn_bg.png',
+			color: '#C04C80',
+			font: {fontSize: 18, fontWeight: 'bold'}
 		});
 		watch_button.addEventListener( 'click', function(){
 			video_option.close();
