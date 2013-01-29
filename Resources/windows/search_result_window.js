@@ -99,6 +99,7 @@ var ListView = function() {
 var DetailView = function() {
 	var _detailview = Titanium.UI.createScrollableView({
 		showPagingControl:true,
+		backgroundColor: 'white',
 		pagingControlHeight:15,
 		pagingControlAlpha: 0.5,
 		currentPage:0
@@ -108,7 +109,7 @@ var DetailView = function() {
 		var _label = Ti.UI.createLabel({
 			top: 15,
 			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-			font: {fontSize: 20, fontWeight: 'bold'},
+			font: {fontSize: 22, fontWeight: 'bold'},
 			color: '#C04C80',
 			left: 10,
 			right: 10,
@@ -128,23 +129,36 @@ var DetailView = function() {
 			backgroundColor: 'transparent',
 			left: 10, 
 			right: 10,
-			bottom: 10,
 			top: 15,
 			font: {fontSize: 14, fontWeight: 'normal'},
 			color: '#445555',
-			value: brand.short_description.decode_html(),
-			scrollable: true
+			value: brand.short_description.decode_html()
+		});
+		_learn_more = Ti.UI.createButton({
+			title : 'Learn More',
+			height : 45,
+			left: 10,
+			right: 10,
+			bottom: 15,
+			backgroundImage: '/images/btn_bg.png',
+			color: '#C04C80',
+			font: {fontSize: 18, fontWeight: 'bold'}
+		});
+		_learn_more.addEventListener('click', function() {
+			Titanium.Platform.openURL(brand.urls.conversion_url);
 		});
 
-		var _view = Ti.UI.createView({
+		var _view = Ti.UI.createScrollView({
 			top: 'auto',
 			bottom: 'auto',
 			layout: 'vertical',
+			scrollabe: true,
 			backgroundColor: 'white'
 		});
 		_view.add(_label);
 		_view.add(_image);
 		_view.add(_description);
+		_view.add(_learn_more);
 		return _view;
 	};
 
