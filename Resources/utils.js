@@ -38,3 +38,15 @@ utils.confirm_message = function(title, message, callback) {
 String.prototype.toCamelCase = function () {
 	return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 };
+
+String.prototype.decode_html = function() {
+    var map = {"gt":">" /* , … */};
+	var clean = this.replace( /<[^>]+>/g, '' );
+    return clean.replace(/&(#(?:x[0-9a-f]+|\d+)|[a-z]+);?/gi, function($0, $1) {
+        if ($1[0] === "#") {
+            return String.fromCharCode($1[1].toLowerCase() === "x" ? parseInt($1.substr(2), 16)  : parseInt($1.substr(1), 10));
+        } else {
+            return map.hasOwnProperty($1) ? map[$1] : $0;
+        }
+    });
+};
