@@ -27,12 +27,12 @@ var modal_popup = function(height_factor, width_factor){
 			backgroundColor : '#FFF'		
 		});
 		
-		_close_button = Titanium.UI.createButton({
+		_close_button = Titanium.UI.createImageView({
 			backgroundImage: '/images/close.png',
 			top: Ti.Platform.displayCaps.platformHeight * (1 - height_factor)/2 - 40,
 			right: Ti.Platform.displayCaps.platformWidth * (1 - width_factor)/2,
-			width:28,
-			height:28,
+			width:25,
+			height:25,
 			zIndex:9999,
 		});	
 		_close_button.addEventListener("click", _close);

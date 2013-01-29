@@ -106,16 +106,16 @@ var DetailView = function() {
 
 	var _create_view = function( brand ) {
 		var _label = Ti.UI.createLabel({
-			top: 10,
+			top: 15,
 			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-			font: {fontSize: 18, fontWeight: 'bold'},
+			font: {fontSize: 20, fontWeight: 'bold'},
 			color: '#C04C80',
 			left: 10,
 			right: 10,
 			text: brand.name
 		});
 		var _image = Ti.UI.createImageView({
-			top: 10,
+			top: 15,
 			left: 10,
 			right: 10,
 			image: brand.logos.full
@@ -129,7 +129,7 @@ var DetailView = function() {
 			left: 10, 
 			right: 10,
 			bottom: 10,
-			top: 10,
+			top: 15,
 			font: {fontSize: 14, fontWeight: 'normal'},
 			color: '#445555',
 			value: brand.short_description.decode_html(),
