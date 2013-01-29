@@ -21,8 +21,8 @@ khan_academy.information_window = function() {
 		var label = Ti.UI.createTextArea({
 			editable: false,
 			backgroundColor: 'transparent',
-			left: 10, 
-			right: 10,
+			left: khan_academy.dv('scroll_view_offset'),
+			right: khan_academy.dv('scroll_view_offset'),
 			bottom: 10,
 			font: {fontSize: 14, fontWeight: 'normal'},
 			color: '#445555',
@@ -90,7 +90,8 @@ khan_academy.information_window = function() {
 			showPagingControl:true,
 			pagingControlHeight:15,
 			pagingControlAlpha: 0.5,
-			currentPage:0
+			currentPage:0,
+			backgroundColor: 'white'
 		});
 		_window.add(_scroll_view);
 	};

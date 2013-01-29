@@ -107,39 +107,40 @@ var DetailView = function() {
 
 	var _create_view = function( brand ) {
 		var _label = Ti.UI.createLabel({
-			top: 15,
+			top: khan_academy.dv('scroll_view_space'),
 			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-			font: {fontSize: 22, fontWeight: 'bold'},
+			font: {fontSize: khan_academy.dv('scroll_view_title_font'), fontWeight: 'bold'},
 			color: '#C04C80',
 			left: 10,
 			right: 10,
 			text: brand.name
 		});
 		var _image = Ti.UI.createImageView({
-			top: 15,
-			left: 10,
-			right: 10,
+			top: khan_academy.dv('scroll_view_space'),
+			left: khan_academy.dv('scroll_view_image_offset'),
+			right: khan_academy.dv('scroll_view_image_offset'),
 			image: brand.logos.full
 		});
 		_image.addEventListener('click', function() {
 			Titanium.Platform.openURL(brand.urls.conversion_url);
 		});
 		var _description = Ti.UI.createTextArea({
+			top: khan_academy.dv('scroll_view_space'),
 			editable: false,
 			backgroundColor: 'transparent',
 			left: 10, 
 			right: 10,
-			top: 15,
 			font: {fontSize: 14, fontWeight: 'normal'},
 			color: '#445555',
 			value: brand.short_description.decode_html()
 		});
 		_learn_more = Ti.UI.createButton({
+			top: khan_academy.dv('scroll_view_space'),
+			bottom: khan_academy.dv('scroll_view_space'),
 			title : 'Learn More',
 			height : 45,
 			left: 10,
 			right: 10,
-			bottom: 15,
 			backgroundImage: '/images/btn_bg.png',
 			color: '#C04C80',
 			font: {fontSize: 18, fontWeight: 'bold'}
@@ -153,7 +154,9 @@ var DetailView = function() {
 			bottom: 'auto',
 			layout: 'vertical',
 			scrollabe: true,
-			backgroundColor: 'white'
+			backgroundColor: 'white',
+			left: khan_academy.dv('scroll_view_offset'),
+			right: khan_academy.dv('scroll_view_offset')
 		});
 		_view.add(_label);
 		_view.add(_image);
