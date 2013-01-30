@@ -26,9 +26,9 @@ khan_academy.information_window = function() {
 			bottom: 10,
 			font: {fontSize: 14, fontWeight: 'normal'},
 			color: '#445555',
-			value: text
+			value: text,
+			autoLink: Ti.UI.AUTOLINK_ALL
 		});
-		label.autoLink = Ti.UI.AUTOLINK_ALL;
 		row.add(label);
 		return row;
 	};

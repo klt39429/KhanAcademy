@@ -44,38 +44,38 @@ khan_academy.archive_videos_window = function() {
 
 		var header_label = Titanium.UI.createLabel({
 			text: playlist_info.standalone_title.toCamelCase(),
-			height: 'auto',
 			font: {
-				fontSize: 14,
+				fontSize: khan_academy.dv('title_font'),
 				fontWeight: 'bold'
 			},
 			color: '#C04C80',
-			top: 5,
-			left: 10,
-			width: 270
+			left: khan_academy.dv('title_offset'),
+			width: khan_academy.dv('title_width'),
+			top: 10
 		});
 		
 		var content_label = Titanium.UI.createLabel({
-			text: playlist_info['description'],
-			height: 'auto',
+			text: playlist_info.description,
 			font: {
-				fontSize: 12
+				fontSize: khan_academy.dv('content_font')
 			},
 			color: '#445555',
-			left: 20,
-			width: 260,
+			left: khan_academy.dv('content_offset'),
+			width: khan_academy.dv('content_width'),
 			bottom: 10
 		});
 		
 		var row = Titanium.UI.createTableViewRow({
-			height: 'auto',
+			height: Ti.UI.SIZE,
 			layout: 'vertical'
-		})
+		});
 		row.add(header_label);
 		row.add(content_label);
 		
-		var section = Titanium.UI.createTableViewSection();
-		section.add(row);		
+		var section = Titanium.UI.createTableViewSection({
+			height: Ti.UI.SIZE,
+			rows: [row]
+		});
 		
 		return section;
 	};
