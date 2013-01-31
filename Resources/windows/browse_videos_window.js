@@ -78,56 +78,27 @@ khan_academy.browse_videos_window = function() {
 	 */
 	var _video_row_clicked = function( video ) {
 		
-		var video_option;
-		
-		if ( Titanium.Platform.osname == 'iphone' ) {
-			video_option = new modal_popup( 0.3, 0.8 );
-		}
-		else if ( Titanium.Platform.osname == 'ipad' ) {
-			video_option = new modal_popup( 0.15, 0.4 );
-		}
-		
-		video_option.init();
-		
-		// Download the movie
-		var download_button = Titanium.UI.createButton({
-			'title' : 'Download',
-			'left' : 'auto',
-			'right' : 'auto',
-			'width' : 200,
-			'height': 40,
-			'top' : 20,
-			backgroundImage: '/images/btn_bg.png',
-			color: '#C04C80',
-			font: {fontSize: 18, fontWeight: 'bold'}
-		});
-		download_button.addEventListener( 'click', function() {
-			_download_video( video );			
-			video_option.close();
-		});
+		var optionsDialogOpts = {
+			options:['Download', 'Watch', 'Cancel'],
+			cancel:2
+		};
+		var dialog = Titanium.UI.createOptionDialog(optionsDialogOpts);
 
-		// Watch the movie
-		var watch_button = Titanium.UI.createButton({
-			'title' : 'Watch',
-			'left' : 'auto',
-			'right' : 'auto',
-			'width' : 200,
-			'height': 40,
-			'bottom' : 20,
-			backgroundImage: '/images/btn_bg.png',
-			color: '#C04C80',
-			font: {fontSize: 18, fontWeight: 'bold'}
+		dialog.addEventListener('click',function(e) {
+			switch (e.index) {
+				case 0:
+					_download_video( video );			
+					break;
+				case 1:
+					var pv = new play_video( video.download_urls.mp4 );
+					pv.init();
+					pv.play();
+					break;
+				default:
+					break;
+			}
 		});
-		watch_button.addEventListener( 'click', function(){
-			video_option.close();
-			var pv = new play_video( video['download_urls']['mp4'] );
-			pv.init();
-			pv.play();
-		});
-		
-		video_option.add_item( watch_button );
-		video_option.add_item( download_button );
-		video_option.open();
+		dialog.show();
 	};
 
 	var _table_content_section = function( playlist_info, downloaded_videos ) {

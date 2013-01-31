@@ -1,6 +1,6 @@
 var social_media = ( function() {
 	
-	var _window_popup, _twitter_button, _facebook_button;
+	var _window_popup, _twitter_button, _facebook_button, _dialog, _dialog_options;
 	var _video;
 	
 	var _update_twitter = function() {
@@ -61,58 +61,37 @@ var social_media = ( function() {
     		}
 		});		
 	};
-	
-	var _create_twitter_button = function() {
-		_twitter_button = Ti.UI.createButton({
-			backgroundImage: '/images/twitter.png',
-			width: 70,
-			height: 70,
-			top: "auto",
-			bottom: "auto",
-			left: 10
-		});
-		_twitter_button.addEventListener( 'click', _update_twitter );
-	};
-	
-	var _create_facebook_button = function() {
-	
-		_facebook_button = Ti.UI.createButton({
-			backgroundImage: '/images/facebook.png',
-			width: 70,
-			height: 70,
-			top: "auto",
-			bottom: "auto",
-			right: 10
-		});
-		_facebook_button.addEventListener( 'click', _update_facebook );
-	};
-	
-	
-	
+
 	var _init = function() {
 		
 		Titanium.Facebook.appid = "234919916599478";
 		
-		_create_twitter_button();
-		_create_facebook_button();
-		
-		if ( Titanium.Platform.osname == 'iphone' ) {
-			_window_popup = new modal_popup( 0.2, 0.6 );
-		}
-		else if ( Titanium.Platform.osname == 'ipad' ) {
-			_window_popup = new modal_popup( 0.15, 0.25 );
-		}
-		
-		_window_popup.init();
-		
-		_window_popup.add_item( _twitter_button );
-		_window_popup.add_item( _facebook_button );
-	}
+		//
+		// Pop up
+		//
+		_dialog_options = {
+			options:['Facebook', 'Twitter', 'Cancel'],
+			title:'Sharing via',
+			cancel:2
+		};
+		_dialog = Titanium.UI.createOptionDialog(_dialog_options);
+		_dialog.addEventListener('click',function(e) {
+			switch (e.index) {
+				case 0:
+					_update_facebook();
+					break;
+				case 1:
+					_update_twitter();
+					break;
+				default:
+					break;
+			}
+		});
+	};
 	
 	var _open = function( video ) {
-		Titanium.API.info( video );
 		_video = video;
-		_window_popup.open();
+		_dialog.show();
 	};
 	
 	var _close = function() {
