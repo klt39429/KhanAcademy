@@ -26,18 +26,18 @@ khan_academy.information_window = function() {
 			bottom: 10,
 			font: {fontSize: 14, fontWeight: 'normal'},
 			color: '#445555',
-			value: text,
-			autoLink: Ti.UI.AUTOLINK_ALL
+			value: text
 		});
-		row.add(label);
-		return row;
+		label.autoLink = Ti.UI.AUTOLINK_ALL;
+		return label;
 	};
 	
 	var AcademyView = function() {
-		var table_view = Ti.UI.createTableView({
-			headerView: new HeaderView('About Khan Academy'),
+		var _view = Ti.UI.createScrollView({
 			separatorStyle: Titanium.UI.iPhone.TableViewSeparatorStyle.NONE,
-			separatorColor: 'transparent'
+			scrollable: true,
+			separatorColor: 'transparent',
+			layout: 'vertical'
 		});
 		var content = [
 			"A free world-class education for anyone anywhere.",
@@ -45,20 +45,20 @@ khan_academy.information_window = function() {
 			"All of the site's resources are available to anyone. It doesn't matter if you are a student, teacher, home-schooler, principal, adult returning to the classroom after 20 years, or a friendly alien just trying to get a leg up in earthly biology. The Khan Academy's materials and resources are available to you completely free of charge."
 		];
 
-		row_data = [];
+		_view.add( new HeaderView('About Khan Academy') );
 		for (var i=0; i<content.length; i++) {
-			row_data.push(text_row(content[i]));
+			_view.add(text_row(content[i]));
 		}
-		table_view.setData(row_data);
 
-		return table_view;
+		return _view;
 	};
 
 	var ArchiverView = function() {
-		var table_view = Ti.UI.createTableView({
-			headerView: new HeaderView('About Khan Archiver'),
+		var _view = Ti.UI.createScrollView({
 			separatorStyle: Titanium.UI.iPhone.TableViewSeparatorStyle.NONE,
-			separatorColor: 'transparent'
+			scrollable: true,
+			separatorColor: 'transparent',
+			layout: 'vertical'
 		});
 		var content = [
 			"This app is not an official app for KhanAcademy.com nor does it have any affiliations with KhanAcademy.",
@@ -68,13 +68,12 @@ khan_academy.information_window = function() {
 			"It's also open source and available at:\nhttps://github.com/klt39429/KhanAcademy/.\nFeel free to clone or branch. Let me know if you want me to give you write authorization (using Titanium/Appcelerator)."
 		];
 
-		row_data = [];
+		_view.add( new HeaderView('About Khan Archiver') );
 		for (var i=0; i<content.length; i++) {
-			row_data.push(text_row(content[i]));
+			_view.add(text_row(content[i]));
 		}
-		table_view.setData(row_data);
 
-		return table_view;
+		return _view;
 	};
 
 	var _init = function() {
